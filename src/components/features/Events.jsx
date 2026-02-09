@@ -17,20 +17,24 @@ const EVENTS_DATA = {
         {
             id: 101,
             title: "GeekFest",
-            description: "Annual tech harvest celebrating innovation.",
-            image: GeekFest
+            description: "An exciting coding competition designed to test logic and speed.",
+            image: GeekFest,
+            linkedin: "https://www.instagram.com/p/DQjgSIeD6n2/?igsh=MTVwcjNhMW9hcjF6NA=="
         },
         {
             id: 102,
             title: "HackHeist",
-            description: "24-hour CTF and cybersecurity challenge.",
-            image: hackheist
+            description: "A 24-hour hackathon focused on building impactful real-world solutions.",
+            image: hackheist,
+            linkedin: "https://www.instagram.com/p/DPrZpuYj2sp/?igsh=a2R0ZWpxcnU0dmhs"
+
         },
         {
             id: 103,
             title: "National Skill UP",
             description: "Nationwide campaign for technical upskilling.",
-            image: nationalSkillup
+            image: nationalSkillup,
+            linkedin: "https://www.instagram.com/p/DOdiaZvjw7A/?igsh=azJxYmRjZTNwMDNo"
         }
     ]
 };
@@ -90,9 +94,10 @@ const Events = () => {
                                     </svg>
                                 </div>
 
-                                <span className="inline-block py-1 px-3 border border-accent/30 rounded-full text-accent text-xs font-bold uppercase tracking-widest w-fit mb-6">
-                                    Registration Open
-                                </span>
+                                <span className="inline-block py-1 px-3 border border-red-500/40 text-red-500 rounded-full text-xs font-bold uppercase tracking-widest w-fit mb-6">
+    Registration Closed
+</span>
+
                                 <h3 className="text-4xl md:text-5xl font-serif font-black mb-4 tracking-tighter text-glow uppercase">
                                     <span className="text-text">Algorithmist'</span><span className="text-accent">26</span>
                                 </h3>
@@ -192,9 +197,15 @@ const Events = () => {
                                         <p className="text-text-muted text-sm mb-8 flex-1 opacity-80">{event.description}</p>
 
                                         <div className="flex gap-4 mt-auto">
-                                            <button className="flex-1 py-3 text-xs font-bold uppercase tracking-wider border border-secondary text-text rounded-full hover:bg-secondary hover:text-white transition-all">
-                                                Visit Site
-                                            </button>
+                                            <a
+    href={event.linkedin}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex-1 py-3 text-xs font-bold uppercase tracking-wider border border-secondary text-text rounded-full hover:bg-secondary hover:text-white transition-all text-center"
+>
+    Visit Site
+</a>
+
                                             <button
                                                 onClick={() => setSelectedEventId(event.id)}
                                                 className="flex-1 py-3 text-xs font-bold uppercase tracking-wider bg-secondary/10 text-accent border border-secondary rounded-full hover:bg-accent hover:text-bg hover:border-accent transition-all"
