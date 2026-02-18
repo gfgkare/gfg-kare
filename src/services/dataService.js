@@ -164,7 +164,7 @@ export const getTeam = async () => {
         },
         {
             id: 13,
-            name: "Venunadh Parimi J",
+            name: "Venunadh Parimi",
             role: "Machine Learning",
             tenure: "2025–2026 (current)",
             image: venunadh,
