@@ -20,6 +20,11 @@ const HomePage = () => (
     <Hero />
     <About />
     <CoreTeam
+    title="Faculty Coordinators"
+    subtitle="Academic Mentors"
+    tenureFilter="faculty"
+/>
+    <CoreTeam
       title="MEET OUR CORE TEAM"
       subtitle="The 2025-2026 Leadership"
       tenureFilter="current"

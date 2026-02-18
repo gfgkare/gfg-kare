@@ -1,7 +1,18 @@
 // This service will handle data fetching from Google Sheets/Excel in the future.
 // For now, it returns mock data to ensure the UI is ready for the integration.
-
+import rajashekar from "../assets/faculty/rajashekar.jpg";
+import reshni from "../assets/faculty/reshni.jpg";
+import yaswanth from "../assets/current_team/yaswanth.jpg";   
 import campus_mantri from "../assets/current_team/campus_mantri.jpg";
+import abhinay from "../assets/current_team/abhinay.jpg";
+import deepa from "../assets/current_team/deepa.png";
+import harpreet from "../assets/current_team/harpeet.jpg"; // ✅ FIXED NAME
+import harsha from "../assets/current_team/harsha.jpg";
+import shruthi from "../assets/current_team/shruthi.png";
+import shushmitha from "../assets/current_team/shushmitha.jpeg";
+import venunadh from "../assets/current_team/venunadh.png";
+import vijayashekhar from "../assets/current_team/vijayashekhar.jpg";
+import rakshan from "../assets/current_team/rakshan.jpg";
 
 export const getEvents = async () => {
     // Simulate API delay
@@ -32,23 +43,43 @@ export const getEvents = async () => {
     ];
 };
 
+// This service will handle data fetching from Google Sheets/Excel in the future.
+// For now, it returns mock data to ensure the UI is ready for the integration.
+
+
 export const getTeam = async () => {
     await new Promise(resolve => setTimeout(resolve, 500));
     return [
         {
             id: 1,
-            name: "Dr. Savitha",
-            role: "Founder & Faculty Coordinator",
-            tenure: "Founders (2023–2024)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Savitha",
-            linkedin: "https://linkedin.com"
+            name: "Mr. Raja Sekar R",
+            role: "Faculty Coordinator",
+            tenure: "faculty",
+            image: rajashekar,
+            linkedin: "https://www.linkedin.com/in/rajasekar13/"
         },
         {
             id: 2,
-            name: "Nothing",
-            role: "Founder & Lead",
-            tenure: "Founders (2023–2024)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Anirudh",
+            name: "Mrs. RESHNI SURESH",
+            role: "Faculty Coordinator",
+            tenure: "faculty",
+            image: reshni,
+            linkedin: "https://www.linkedin.com/in/reshni-suresh-5b94061b/"
+        },
+        {
+            id: 101,
+            name: "Founder 1",
+            role: "Founder",
+            tenure: "founders",
+            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Founder1",
+            linkedin: "https://linkedin.com"
+        },
+        {
+            id: 102,
+            name: "Founder 2",
+            role: "Founder",
+            tenure: "founders",
+            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Founder2",
             linkedin: "https://linkedin.com"
         },
         {
@@ -68,7 +99,7 @@ export const getTeam = async () => {
             linkedin: "https://linkedin.com"
         },
         {
-            id: 4,
+            id: 5, // ✅ FIXED DUPLICATE ID
             name: "Member B",
             role: "Event Lead",
             tenure: "2024–2025",
@@ -76,111 +107,96 @@ export const getTeam = async () => {
             linkedin: "https://linkedin.com"
         },
         {
-            id: 5,
+            id: 6,
             name: "Anirudh Naginayani Cheruvu",
             role: "Campus Mantri",
             tenure: "2025–2026 (current)",
             image: campus_mantri,
-            linkedin: "https://linkedin.com"
-        },
-        {
-            id: 6,
-            name: "Member D",
-            role: "Core Member",
-            tenure: "2025–2026 (current)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=MemberD",
-            linkedin: "https://linkedin.com"
+            linkedin: "https://www.linkedin.com/in/anirudh-naginayani-cheruvu-a1b720289/"
         },
         {
             id: 7,
-            name: "Member E",
-            role: "Core Member",
+            name: "Rakshan Ananth.M",
+            role: "Chairperson",
             tenure: "2025–2026 (current)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=MemberE",
-            linkedin: "https://linkedin.com"
+            image: rakshan,
+            linkedin: "https://www.linkedin.com/in/rakshan-ananth-m/"
         },
         {
             id: 8,
-            name: "Member F",
-            role: "Core Member",
+            name: "Vijayashekhar C",
+            role: "Technical",
             tenure: "2025–2026 (current)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=MemberF",
-            linkedin: "https://linkedin.com"
+            image: vijayashekhar,
+            linkedin: "https://www.linkedin.com/in/vijayashekarc/"
         },
         {
             id: 9,
-            name: "Member G",
-            role: "Core Member",
+            name: "Sushmitha N",
+            role: "PR & Outreach",
             tenure: "2025–2026 (current)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=MemberG",
-            linkedin: "https://linkedin.com"
+            image: shushmitha,
+            linkedin: "https://www.linkedin.com/in/sushmitha-n-379804323/"
         },
         {
             id: 10,
-            name: "Member H",
-            role: "Core Member",
+            name: "Manyam Deepa",
+            role: "Web Developer",
             tenure: "2025–2026 (current)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=MemberH",
-            linkedin: "https://linkedin.com"
+            image: deepa,
+            linkedin: "https://www.linkedin.com/in/manyam-deepa-3ba988302/"
         },
         {
             id: 11,
-            name: "Member I",
-            role: "Core Member",
+            name: "Yashwanth Kasa",
+            role: "Design & Creative",
             tenure: "2025–2026 (current)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=MemberI",
-            linkedin: "https://linkedin.com"
+            image: yaswanth, // ✅ KEEP AVATAR
+            linkedin: "https://www.linkedin.com/in/yashwanth-kasa-b5222a247/"
         },
         {
             id: 12,
-            name: "Member J",
-            role: "Core Member",
+            name: "Harpreet Singh",
+            role: "Social Media",
             tenure: "2025–2026 (current)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=MemberJ",
-            linkedin: "https://linkedin.com"
+            image: harpreet, // ✅ NOW MATCHES IMPORT
+            linkedin: "https://www.linkedin.com/in/harpreet04singh/"
         },
         {
             id: 13,
-            name: "Member K",
-            role: "Core Member",
+            name: "Venunadh Parimi J",
+            role: "Machine Learning",
             tenure: "2025–2026 (current)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=MemberK",
-            linkedin: "https://linkedin.com"
+            image: venunadh,
+            linkedin: "https://www.linkedin.com/in/venunadh-parimi-1b571034b/"
         },
         {
             id: 14,
-            name: "Member L",
-            role: "Core Member",
+            name: "Shruthi M",
+            role: "Events & Operations",
             tenure: "2025–2026 (current)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=MemberL",
-            linkedin: "https://linkedin.com"
+            image: shruthi,
+            linkedin: "https://www.linkedin.com/in/shruthi-pandian-55b123362?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         },
         {
             id: 15,
-            name: "Member M",
-            role: "Core Member",
+            name: "LINGALA HARSHA VARDHAN REDDY",
+            role: "UI/UX Developer",
             tenure: "2025–2026 (current)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=MemberM",
-            linkedin: "https://linkedin.com"
+            image: harsha,
+            linkedin: "https://www.linkedin.com/in/lingalaharshavardhanreddy/"
         },
         {
             id: 16,
-            name: "Member N",
-            role: "Core Member",
+            name: "M. Abhinay Reddy",
+            role: "Associate Event Organiser",
             tenure: "2025–2026 (current)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=MemberN",
-            linkedin: "https://linkedin.com"
-        },
-        {
-            id: 17,
-            name: "Member O",
-            role: "Core Member",
-            tenure: "2025–2026 (current)",
-            image: "https://api.dicebear.com/7.x/avataaars/svg?seed=MemberO",
-            linkedin: "https://linkedin.com"
+            image: abhinay,
+            linkedin: "https://www.linkedin.com/in/abhinay-reddy-mukkamalla-455893323?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         }
     ];
 };
+
 
 export const getEventWinners = async (eventId) => {
     await new Promise(resolve => setTimeout(resolve, 800));

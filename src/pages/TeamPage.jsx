@@ -11,23 +11,35 @@ const TeamPage = () => {
     useEffect(() => {
         const fetchTeam = async () => {
             const result = await getTeam();
-            // Group by tenure
+
             const grouped = result.reduce((acc, member) => {
                 if (!acc[member.tenure]) acc[member.tenure] = [];
                 acc[member.tenure].push(member);
                 return acc;
             }, {});
+
             setTeamData(grouped);
             setLoading(false);
         };
+
         fetchTeam();
         window.scrollTo(0, 0);
     }, []);
 
+    // 🔥 ORDER: Faculty → Founders → 2024 → Current
     const sections = Object.keys(teamData).sort((a, b) => {
-        if (a.includes("Founders")) return -1;
-        if (b.includes("Founders")) return 1;
-        return a.localeCompare(b); // Sort years ascending: 2024-2025 then 2025-2026
+        const getPriority = (tenure) => {
+            const t = tenure.toLowerCase();
+
+            if (t.includes("faculty")) return 0;
+            if (t.includes("founder")) return 1;
+            if (t.includes("2024")) return 2;
+            if (t.includes("current")) return 3;
+
+            return 99;
+        };
+
+        return getPriority(a) - getPriority(b);
     });
 
     return (
@@ -56,13 +68,19 @@ const TeamPage = () => {
                     ) : (
                         <div className="space-y-32">
                             {sections.map((tenure) => {
-                                const isFounders = tenure.includes("Founders");
+                                const isFounders = tenure.toLowerCase().includes("founder");
+
                                 return (
                                     <section key={tenure} className="relative">
                                         <div className="flex items-center gap-6 mb-12">
                                             <h2 className="text-2xl md:text-3xl font-serif font-bold text-accent">
-                                                {tenure}
-                                            </h2>
+    {tenure
+        .replace("faculty", "Faculty Coordinators")
+        .replace("founders", "Founders (2023–2024)")
+        .replace("current", "2025–2026 (Current)")
+        .replace("2024–2025", "2024–2025")}
+</h2>
+
                                             <div className="flex-1 h-[1px] bg-secondary/20"></div>
                                         </div>
 
@@ -76,10 +94,20 @@ const TeamPage = () => {
                                                     viewport={{ once: true }}
                                                 >
                                                     <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-2 border-secondary group-hover:border-accent transition-all duration-500 group-hover:scale-105 group-hover:shadow-glow-accent">
-                                                        <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-all duration-500" />
+                                                        <img
+                                                            src={member.image}
+                                                            alt={member.name}
+                                                            className="w-full h-full object-cover transition-all duration-500"
+                                                        />
                                                     </div>
-                                                    <h3 className="text-xl font-bold mb-1 text-text">{member.name}</h3>
-                                                    <p className="text-accent text-xs uppercase tracking-[0.2em] font-medium">{member.role}</p>
+
+                                                    <h3 className="text-xl font-bold mb-1 text-text">
+                                                        {member.name}
+                                                    </h3>
+
+                                                    <p className="text-accent text-xs uppercase tracking-[0.2em] font-medium">
+                                                        {member.role}
+                                                    </p>
 
                                                     <a
                                                         href={member.linkedin}
