@@ -75,7 +75,7 @@ const WinnersModal = ({ eventId, onClose }) => {
                                             </div>
                                         </div>
                                         <div className="p-5">
-                                            <h3 className="text-sm uppercase tracking-widest text-text-muted">Project / Team</h3>
+                                            <h3 className="text-sm uppercase tracking-widest text-text-muted">Team</h3>
                                             <p className="mt-2 text-lg font-semibold text-text">
                                                 {winner.title}
                                             </p>

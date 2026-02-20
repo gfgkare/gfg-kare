@@ -60,7 +60,7 @@ const About = () => {
                 </div>
             </div>
 
-            <style jsx>{`
+            <style>{`
                 .dashed-border {
                     border-style: dashed;
                 }
