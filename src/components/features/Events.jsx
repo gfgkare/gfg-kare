@@ -139,7 +139,7 @@ const Events = () => {
     );
 
     return (
-        <section id="events" className="py-20 relative bg-bg">
+        <section id="events" className="py-12 md:py-14">
             <div className="container">
 
                 {/* --- ONGOING EVENT SECTION --- */}
@@ -154,7 +154,7 @@ const Events = () => {
                 })}
 
                 {/* --- UPCOMING EVENT SECTION --- */}
-                <div className="mb-32">
+                <div className="mb-8">
                     {renderFeaturedEvent({
                         wrapperClass: '',
                         sectionLabel: 'Upcoming',
@@ -247,7 +247,7 @@ const Events = () => {
                                     <div className="p-6 flex-1 flex flex-col">
                                         <p className="text-text-muted text-sm mb-8 flex-1 opacity-80">{event.description}</p>
 
-                                        <div className="flex gap-4 mt-auto">
+                                        <div className="flex gap-4 mt-8">
                                             <a
                                                 href={event.linkedin}
                                                 target="_blank"
