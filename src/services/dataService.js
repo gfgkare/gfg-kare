@@ -38,6 +38,9 @@ import Jagadeesh from "../assets/founders/Jagadeesh.jpg";
 import first from "../assets/hackheist(winners)/first.jpg";
 import second from "../assets/hackheist(winners)/second.jpg";
 import third from "../assets/hackheist(winners)/third.jpg";
+import firstgf from "../assets/geekfest(winners)/firstgf.jpg";
+import secondgf from "../assets/geekfest(winners)/secondgf.jpg";
+import thirdgf from "../assets/geekfest(winners)/thirdgf.jpg";
 export const getEvents = async () => {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 500));
@@ -365,16 +368,16 @@ export const getEventWinners = async (eventId) => {
         101: { //AlgoTussle
             topWinners: [
                 { id: 1, name: "Rajveer Singh", position: 1, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rajveer"},
-                { id: 2, name: "Penchala Prasad Lakkakula", position: 2, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Penchala"},
+                { id: 2, name: "Penchala Prasad Lakkakula", position: 2, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul"},
                 { id: 3, name: "Mohammed Ashfaqul Haq", position: 3, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ashfaqul"},
             ],
             allWinners: []
         },
         102: { // GeekFest
             topWinners: [
-                { id: 1, name: "Inbathamizhan S", position: 1, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul"},
-                { id: 2, name: " N. Kavya Sri", position: 2, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Kavya"},
-                { id: 3, name: "Siddabathuni Deo Haneesh", position: 3, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Deo"},
+                { id: 1, name: "Inbathamizhan S", position: 1, image: firstgf},
+                { id: 2, name: " N. Kavya Sri", position: 2, image: secondgf},
+                { id: 3, name: "Siddabathuni Deo Haneesh", position: 3, image: thirdgf},
             ],
             allWinners: []
         },
@@ -388,9 +391,9 @@ export const getEventWinners = async (eventId) => {
         },
         104: { // National Skill UP
             topWinners: [
-                { id: 1, name: "Rahul S.", position: 1, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul", project: "Skills Ledger" },
-                { id: 2, name: "Meera J.", position: 2, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Meera", project: "EduPortal" },
-                { id: 3, name: "Kiran P.", position: 3, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Kiran", project: "SkillMatch AI" },
+                { id: 1, name: "Rahul S.", position: 1, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul"},
+                { id: 2, name: "Meera J.", position: 2, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Kavya"},
+                { id: 3, name: "Kiran P.", position: 3, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rajveer"},
             ],
             allWinners: []
         }
