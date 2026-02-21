@@ -260,7 +260,7 @@ export const getTeam = async () => {
         },
         {
             id: 24, // ✅ FIXED DUPLICATE ID
-            name: "K.Yaswant Kumar",
+            name: "K.Yaswanth Kumar",
             role: "Video Editor",
             tenure: "2024–2025",
             image: YaswantKumar,
