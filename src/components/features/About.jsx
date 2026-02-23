@@ -3,10 +3,8 @@ import { motion } from "framer-motion";
 import teamImage from "../../assets/heroimage.jpg";
 
 const stats = [
-  { value: "500+", label: "Active Cadets" },
-  { value: "50+", label: "Summits Executed" },
-  { value: "20+", label: "Tech Domains" },
-  { value: "95%", label: "Placement Rate" },
+  { value: "30+", label: "Events Organized" },
+  { value: "6", label: "EE Credits over this Academic Year" },
 ];
 
 const About = () => {
