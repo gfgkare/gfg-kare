@@ -1,5 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TeamCard from '../../lib/TeamCard';
+import {
+    fadeInitial, fadeWhileInView,
+    t3Viewport, t3Transition,
+} from '../../lib/motionConfig';
 
 const Founders = () => {
     // Mock data for founders - in production this would come from dataService
@@ -23,20 +28,16 @@ const Founders = () => {
 
             <div className="container relative z-10">
                 <div className="text-center mb-20">
-                    <motion.h2
-                        className="text-accent mb-4 text-sm uppercase tracking-[0.5em] font-bold"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                    >
+                    {/* "Legacy" label — static; heading fades calmly, cards carry the directional entrance */}
+                    <h2 className="text-accent mb-4 text-sm uppercase tracking-[0.5em] font-bold">
                         Legacy
-                    </motion.h2>
+                    </h2>
                     <motion.h3
                         className="text-4xl md:text-5xl font-serif text-text"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
+                        initial={fadeInitial}
+                        whileInView={fadeWhileInView}
+                        viewport={t3Viewport}
+                        transition={{ duration: 0.7, ease: 'easeOut' }}
                     >
                         The Founding <span className="text-accent text-glow">Signatories</span>
                     </motion.h3>
@@ -44,22 +45,23 @@ const Founders = () => {
 
                 <div className="flex flex-wrap justify-center gap-16">
                     {founders.map((founder, index) => (
-                        <motion.div
+                        // Alternating left/right scroll entry + TiltCard for interactive depth
+                        <TeamCard
                             key={index}
-                            className="relative group text-center"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 + (index * 0.2) }}
+                            variant="founder"
+                            initial={{ opacity: 0, x: index % 2 === 0 ? -24 : 24 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={t3Viewport}
+                            transition={{ ...t3Transition, delay: index * 0.15 }}
                         >
-                            <div className="w-64 h-80 bg-gradient-to-b from-bg to-secondary/30 border border-accent/30 rounded-t-full mb-6 relative overflow-hidden transition-all duration-500 group-hover:border-accent/60 group-hover:shadow-glow-accent">
+                            <div className="w-64 h-80 bg-gradient-to-b from-bg to-secondary/30 border border-accent/30 rounded-t-full mb-6 relative overflow-hidden transition-all duration-500 group-hover:border-accent/60">
                                 {/* Image Placeholder */}
                                 <div className="absolute inset-0 bg-secondary/10"></div>
                             </div>
 
-                            <h4 className="text-2xl font-serif text-text mb-2 group-hover:text-accent transition-colors">{founder.name}</h4>
+                            <h4 className="text-2xl font-serif text-text mb-2 group-hover:text-accent group-hover:-translate-y-[3px] transition-all duration-300">{founder.name}</h4>
                             <p className="text-accent/80 text-xs uppercase tracking-widest">{founder.role}</p>
-                        </motion.div>
+                        </TeamCard>
                     ))}
                 </div>
             </div>

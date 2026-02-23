@@ -3,8 +3,10 @@ import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import ScrollProgress from './components/layout/ScrollProgress';
 import Hero from './components/features/Hero';
 import About from './components/features/About';
+import Manifesto from './components/features/Manifesto';
 import Events from './components/features/Events';
 import CoreTeam from './components/features/CoreTeam';
 import Founders from './components/features/Founders';
@@ -19,11 +21,14 @@ const HomePage = () => (
   <>
     <Hero />
     <About />
+    <Manifesto />
     <CoreTeam
-    title="Faculty Coordinators"
-    subtitle="Academic Mentors"
-    tenureFilter="faculty"
-/>
+      title="Faculty Coordinators"
+      subtitle="Academic Mentors"
+      tenureFilter="faculty"
+      gridLayout={true}
+      compact={true}
+    />
     <CoreTeam
       title="MEET OUR CORE TEAM"
       subtitle="The 2025-2026 Leadership"
@@ -45,6 +50,7 @@ function App() {
 
       {!loading && (
         <>
+          <ScrollProgress />
           <InteractiveBackground />
           <FloatingParticles />
           <CursorShadow />

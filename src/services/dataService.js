@@ -7,7 +7,7 @@ import campus_mantri from "../assets/current_team/campus_mantri.jpg";
 import abhinay from "../assets/current_team/abhinay.jpg";
 import deepa from "../assets/current_team/deepa.png";
 import harpreet from "../assets/current_team/harpeet.jpg"; // ✅ FIXED NAME
-import harsha from "../assets/current_team/harsha.jpg";
+import harsha from "../assets/current_team/harsha.jpeg";
 import shruthi from "../assets/current_team/shruthi.png";
 import shushmitha from "../assets/current_team/shushmitha.jpeg";
 import venunadh from "../assets/current_team/venunadh.png";
@@ -79,7 +79,7 @@ export const getTeam = async () => {
     return [
         {
             id: 1,
-            name: "Mr. Raja Sekar R",
+            name: "Mr Raja Sekar R",
             role: "Faculty Coordinator",
             tenure: "faculty",
             image: rajashekar,
@@ -87,7 +87,7 @@ export const getTeam = async () => {
         },
         {
             id: 2,
-            name: "Mrs. RESHNI SURESH",
+            name: "Mrs RESHNI SURESH",
             role: "Faculty Coordinator",
             tenure: "faculty",
             image: reshni,
@@ -95,7 +95,7 @@ export const getTeam = async () => {
         },
         {
             id: 101,
-            name: "Ch.Ashok Reddy",
+            name: "Ashok Ch",
             role: "Chair Person",
             tenure: "founders",
             image:AshokReddy,
@@ -103,7 +103,7 @@ export const getTeam = async () => {
         },
         {
             id: 102,
-            name: "G.Krishna Vineeth",
+            name: "Krishna Vineeth G",
             role: "Vice Chair-Person & Campus Mantri",
             tenure: "founders",
             image: KrishnaVineeth,
@@ -111,7 +111,7 @@ export const getTeam = async () => {
         },
         {
             id: 103,
-            name: "N Balaji",
+            name: "Balaji N",
             role: "Graphic Designer",
             tenure: "founders",
             image: Balaji,
@@ -127,7 +127,7 @@ export const getTeam = async () => {
         },
         {
             id: 105,
-            name: "M Vaishnavi",
+            name: "Vaishnavi M",
             role: "Technical Associate",
             tenure: "founders",
             image: Vaishnavi,
@@ -135,7 +135,7 @@ export const getTeam = async () => {
         },
         {
             id: 106,
-            name: "A Parimal Sesha Sai",
+            name: "Parimal Sesha Sai A",
             role: "Technical Head",
             tenure: "founders",
             image: ParimalSeshaSai,
@@ -143,7 +143,7 @@ export const getTeam = async () => {
         },
         {
             id: 107,
-            name: "M Leela Venkata Sai",
+            name: "Leela Venkata Sai M",
             role: "Graphic Designing Head",
             tenure: "founders",
             image: LeelaVenkataSai,
@@ -151,7 +151,7 @@ export const getTeam = async () => {
         },
         {
             id: 108,
-            name: "A Pavan Vivek",
+            name: "Pavan Vivek A",
             role: "Marketing Head",
             tenure: "founders",
             image: PavanVivek,
@@ -159,15 +159,15 @@ export const getTeam = async () => {
         },
         {
             id: 109,
-            name: "Y Jaya Sri",
+            name: "Jaya Sri Y",
             role: "Content Writer",
             tenure: "founders",
             image: JayaSri,
-            linkedin: "https://www.linkedin.com/in/y-jaya-sri/"
+            linkedin: "https://www.linkedin.com/in"
         },
         {
             id: 110,
-            name: "Y Sravani",
+            name: "Sravani Y",
             role: "Social Media Head",
             tenure: "founders",
             image: Sravani,
@@ -175,7 +175,7 @@ export const getTeam = async () => {
         },
         {
             id: 111,
-            name: "S Jagadeesh",
+            name: "Jagadeesh S",
             role: "Event Head",
             tenure: "founders",
             image: Jagadeesh,
@@ -183,7 +183,7 @@ export const getTeam = async () => {
         },
         {
             id: 3,
-            name: "Pidigundla Venkateswara Rao",
+            name: "Venkateswara Rao P",
             role: "Campus Mantri",
             tenure: "2024–2025",
             image: PidigundlaVenkateswaraRao,
@@ -191,7 +191,7 @@ export const getTeam = async () => {
         },
         {
             id: 4,
-            name: "Navadeep Marella",
+            name: "Navadeep M",
             role: "Chair Person",
             tenure: "2024–2025",
             image: navadeepMarella,
@@ -207,7 +207,7 @@ export const getTeam = async () => {
         },
         {
             id: 17, // ✅ FIXED DUPLICATE ID
-            name: "Vivek Charan Tej Kosireddy",
+            name: "Vivek Charan Tej K",
             role: "Technical Lead",
             tenure: "2024–2025",
             image: vivekcharantejkosireddy,
@@ -215,7 +215,7 @@ export const getTeam = async () => {
         },
         {
             id: 18, // ✅ FIXED DUPLICATE ID
-            name: "Garnepudi Prasanthi",
+            name: "Prasanthi G",
             role: "Tech Associate",
             tenure: "2024–2025",
             image: GarnepudiPrasanthi,
@@ -223,7 +223,7 @@ export const getTeam = async () => {
         },
         {
             id: 19, // ✅ FIXED DUPLICATE ID
-            name: "Siri Chowdary ",
+            name: "Siri",
             role: "PR & Outreach",
             tenure: "2024–2025",
             image: SiriChowdary ,
@@ -231,7 +231,7 @@ export const getTeam = async () => {
         },
         {
             id: 20, // ✅ FIXED DUPLICATE ID
-            name: "Vinay Reddy",
+            name: "Vinay",
             role: "Web Developer",
             tenure: "2024–2025",
             image: VinayReddy,
@@ -239,7 +239,7 @@ export const getTeam = async () => {
         },
         {
             id: 21, // ✅ FIXED DUPLICATE ID
-            name: "Batchu Gnana Sampath",
+            name: "Gnana Sampath B",
             role: "Graphic Designer",
             tenure: "2024–2025",
             image: BatchuGnanaSampath,
@@ -247,7 +247,7 @@ export const getTeam = async () => {
         },
         {
             id: 22, // ✅ FIXED DUPLICATE ID
-            name: "Mastan Shaik",
+            name: "Mastan S",
             role: "Social Media Head",
             tenure: "2024–2025",
             image: MastanShaik,
@@ -255,7 +255,7 @@ export const getTeam = async () => {
         },
         {
             id: 23, // ✅ FIXED DUPLICATE ID
-            name: "Kunapareddy Bala Rajesh",
+            name: "Bala Rajesh K",
             role: "Content Writer",
             tenure: "2024–2025",
             image: KunapareddyBalaRajesh,
@@ -263,7 +263,7 @@ export const getTeam = async () => {
         },
         {
             id: 24, // ✅ FIXED DUPLICATE ID
-            name: "K.Yaswanth Kumar",
+            name: "Yaswanth Kumar K",
             role: "Video Editor",
             tenure: "2024–2025",
             image: YaswantKumar,
@@ -271,7 +271,7 @@ export const getTeam = async () => {
         },
         {
             id: 6,
-            name: "Anirudh Naginayani Cheruvu",
+            name: "Anirudh N C",
             role: "Campus Mantri",
             tenure: "2025–2026 (current)",
             image: campus_mantri,
@@ -279,7 +279,7 @@ export const getTeam = async () => {
         },
         {
             id: 7,
-            name: "Rakshan Ananth.M",
+            name: "Rakshan Ananth M",
             role: "Chairperson",
             tenure: "2025–2026 (current)",
             image: rakshan,
@@ -303,7 +303,7 @@ export const getTeam = async () => {
         },
         {
             id: 10,
-            name: "Manyam Deepa",
+            name: "Deepa M",
             role: "Web Developer",
             tenure: "2025–2026 (current)",
             image: deepa,
@@ -311,7 +311,7 @@ export const getTeam = async () => {
         },
         {
             id: 11,
-            name: "Yashwanth Kasa",
+            name: "Yashwanth K",
             role: "Design & Creative",
             tenure: "2025–2026 (current)",
             image: yaswanth, // ✅ KEEP AVATAR
@@ -319,7 +319,7 @@ export const getTeam = async () => {
         },
         {
             id: 12,
-            name: "Harpreet Singh",
+            name: "Harpreet",
             role: "Social Media",
             tenure: "2025–2026 (current)",
             image: harpreet, // ✅ NOW MATCHES IMPORT
@@ -327,7 +327,7 @@ export const getTeam = async () => {
         },
         {
             id: 13,
-            name: "Venunadh Parimi",
+            name: "Venunadh P",
             role: "Machine Learning",
             tenure: "2025–2026 (current)",
             image: venunadh,
@@ -343,7 +343,7 @@ export const getTeam = async () => {
         },
         {
             id: 15,
-            name: "LINGALA HARSHA VARDHAN REDDY",
+            name: "HARSHA VARDHAN L",
             role: "UI/UX Developer",
             tenure: "2025–2026 (current)",
             image: harsha,
@@ -351,7 +351,7 @@ export const getTeam = async () => {
         },
         {
             id: 16,
-            name: "M. Abhinay Reddy",
+            name: "Abhinay M",
             role: "Associate Event Organiser",
             tenure: "2025–2026 (current)",
             image: abhinay,

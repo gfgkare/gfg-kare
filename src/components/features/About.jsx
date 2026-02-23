@@ -1,9 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import teamImage from "../../assets/heroimage.jpg";
+import {
+  t2Initial, t2WhileInView, t2Viewport, t2Transition,
+  fadeInitial, fadeWhileInView,
+} from "../../lib/motionConfig";
 
 const stats = [
   { value: "30+", label: "Events Organized" },
+  { value: "30+", label: "Event Organized" },
   { value: "6", label: "EE Credits over this Academic Year" },
 ];
 
@@ -18,26 +23,20 @@ const About = () => {
       <div className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container relative z-10">
-        {/* Top Label */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-xs uppercase tracking-[0.3em] text-accent mb-6 font-semibold"
-        >
+        {/* Top Label — static, not animated (section label is not the dominant element) */}
+        <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6 font-semibold">
           Our Identity
-        </motion.p>
+        </p>
 
         {/* Main Grid */}
         <div className="grid lg:grid-cols-2 gap-8 items-center">
-          
-          {/* LEFT SIDE */}
+
+          {/* LEFT SIDE — Tier 2 dominant entrance (y-displacement) */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={t2Initial}
+            whileInView={t2WhileInView}
+            viewport={t2Viewport}
+            transition={t2Transition}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold leading-tight mb-4 text-text">
               The Apex of <br />
@@ -52,15 +51,15 @@ const About = () => {
             </p>
           </motion.div>
 
-          {/* RIGHT SIDE IMAGE */}
+          {/* RIGHT SIDE IMAGE — opacity-only fade, no y displacement to vary pacing */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={fadeInitial}
+            whileInView={fadeWhileInView}
+            viewport={t2Viewport}
+            transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
           >
             <div className="relative rounded-2xl overflow-hidden border border-secondary/20 shadow-[0_0_30px_rgba(0,255,170,0.12)]">
-              
+
               {/* Controlled Image Height */}
               <img
                 src={teamImage}
@@ -73,21 +72,15 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Stats Row */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-6 border-t border-secondary/20"
-        >
+        {/* Stats Row — per-item opacity stagger (0.15s), no shared y-wrapper */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-6 border-t border-secondary/20">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={fadeInitial}
+              whileInView={fadeWhileInView}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 + i * 0.15 }}
             >
               <h4 className="text-2xl md:text-3xl font-serif font-bold text-accent">
                 {stat.value}
@@ -97,7 +90,7 @@ const About = () => {
               </p>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

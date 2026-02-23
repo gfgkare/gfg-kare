@@ -1,12 +1,19 @@
 import React, { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import WinnersModal from './WinnersModal';
+import TiltCard from '../../lib/TiltCard';
 import Algorithmist_poster from '../../assets/Algorithmist_poster.jpeg';
 import hackheist from '../../assets/hackheist.jpg';
 import nationalSkillup from '../../assets/nationalSkillup.jpg';
 import GeekFest from '../../assets/GeekFest.jpg';
 import outbreak from '../../assets/outbreak.jpeg';
 import algotussle from '../../assets/algotussle.jpg';
+import {
+    t2Initial, t2WhileInView, t2Viewport, t2Transition,
+    hoverScale, tapScale,
+    fadeInitial, fadeWhileInView,
+} from '../../lib/motionConfig';
+import MagneticButton from '../../lib/MagneticButton';
 
 const EVENTS_DATA = {
     ongoing: {
@@ -81,20 +88,18 @@ const Events = () => {
         buttonText
     }) => (
         <div className={wrapperClass}>
-            <motion.div
-                className="text-left mb-12"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-            >
+            {/* Section label — static, card is the dominant Tier 2 animation */}
+            <div className="text-left mb-12">
                 <h3 className="text-4xl font-serif"><span className={sectionAccentClass}>{sectionLabel}</span> <span className="text-text">Event</span></h3>
-            </motion.div>
+            </div>
 
+            {/* Tier 2 — one dominant entrance per featured event */}
             <motion.div
                 className="relative w-full rounded-2xl overflow-hidden border border-secondary/30 group"
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                initial={t2Initial}
+                whileInView={t2WhileInView}
+                viewport={t2Viewport}
+                transition={t2Transition}
             >
                 <div className="grid grid-cols-1 lg:grid-cols-2 lg:h-[80vh] min-h-[500px]">
                     <div className="relative h-[60vh] lg:h-full flex items-center justify-center overflow-hidden ...">
@@ -127,11 +132,13 @@ const Events = () => {
                         <p className="text-text-muted text-lg mb-10 leading-relaxed border-l-2 border-secondary pl-6">
                             {event.description}
                         </p>
+                        <MagneticButton>
                         <a href={event.link}>
                             <button className="btn btn-primary self-start">
                                 {buttonText}
                             </button>
                         </a>
+                        </MagneticButton>
                     </div>
                 </div>
             </motion.div>
@@ -169,11 +176,13 @@ const Events = () => {
 
                 {/* --- PAST EVENTS SECTION (Grid Layout) --- */}
                 <div>
+                    {/* Fade-only — heading appears behind; cards carry the y-entrance */}
                     <motion.div
                         className="text-left mb-12"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        initial={fadeInitial}
+                        whileInView={fadeWhileInView}
+                        viewport={t2Viewport}
+                        transition={{ duration: 0.7, ease: 'easeOut' }}
                     >
                         <h2 className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-2">Mission Logs</h2>
                         <h3 className="text-4xl font-serif">
@@ -188,8 +197,8 @@ const Events = () => {
                         <motion.button
                             onClick={() => scroll('left')}
                             className="hidden md:flex absolute -left-12 lg:-left-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-secondary bg-bg/80 backdrop-blur-sm items-center justify-center text-text-muted hover:text-accent hover:border-accent transition-all z-20 opacity-0 group-hover/slider:opacity-100 shadow-lg"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
+                            whileHover={hoverScale}
+                            whileTap={tapScale}
                             aria-label="Previous Events"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -201,8 +210,8 @@ const Events = () => {
                         <motion.button
                             onClick={() => scroll('right')}
                             className="hidden md:flex absolute -right-12 lg:-right-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-secondary bg-bg/80 backdrop-blur-sm items-center justify-center text-text-muted hover:text-accent hover:border-accent transition-all z-20 opacity-0 group-hover/slider:opacity-100 shadow-lg"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
+                            whileHover={hoverScale}
+                            whileTap={tapScale}
                             aria-label="Next Events"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -216,13 +225,14 @@ const Events = () => {
                             className="flex overflow-x-auto pb-12 gap-8 snap-x snap-mandatory scrollbar-hide scroll-smooth"
                         >
                             {EVENTS_DATA.past.map((event, index) => (
-                                <motion.div
+                                // Tier 2 — staggered y-entrance + TiltCard for interactive depth
+                                <TiltCard
                                     key={event.id}
                                     className="min-w-[85vw] md:min-w-[400px] snap-center bg-bg-surface border border-secondary/30 rounded-xl overflow-hidden flex flex-col group hover:border-accent/50 transition-colors duration-300"
-                                    initial={{ opacity: 0, x: 50 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
+                                    initial={t2Initial}
+                                    whileInView={t2WhileInView}
+                                    viewport={t2Viewport}
+                                    transition={{ ...t2Transition, delay: Math.min(index * 0.15, 0.45) }}
                                 >
                                     {/* Image Area */}
                                     <div className="h-48 relative overflow-hidden bg-secondary/10">
@@ -232,7 +242,7 @@ const Events = () => {
                                             <img
                                                 src={event.image}
                                                 alt={event.title}
-                                                className="absolute inset-0 w-full h-full object-cover"
+                                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
                                             />
                                         )}
                                         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
@@ -265,7 +275,7 @@ const Events = () => {
                                             </button>
                                         </div>
                                     </div>
-                                </motion.div>
+                                </TiltCard>
                             ))}
                         </div>
                     </div>
@@ -273,13 +283,16 @@ const Events = () => {
 
             </div>
 
-            {/* Winners Modal */}
-            {selectedEventId && (
-                <WinnersModal
-                    eventId={selectedEventId}
-                    onClose={() => setSelectedEventId(null)}
-                />
-            )}
+            {/* Winners Modal — AnimatePresence here enables exit animation before unmount */}
+            <AnimatePresence>
+                {selectedEventId && (
+                    <WinnersModal
+                        key={selectedEventId}
+                        eventId={selectedEventId}
+                        onClose={() => setSelectedEventId(null)}
+                    />
+                )}
+            </AnimatePresence>
         </section>
     );
 };

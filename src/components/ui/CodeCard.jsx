@@ -1,12 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { t3Transition } from '../../lib/motionConfig';
 
 const CodeCard = () => {
     return (
+        // Tier 3 — light x-entrance; rotate handled by animate
         <motion.div
-            initial={{ opacity: 0, x: 50, rotate: 0 }}
+            initial={{ opacity: 0, x: 30, rotate: 0 }}
             animate={{ opacity: 1, x: 0, rotate: 3 }}
-            transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+            transition={{ ...t3Transition, delay: 0.3 }}
             className="relative w-[400px] h-[280px] bg-white rounded-2xl shadow-2xl overflow-hidden"
             style={{
                 transform: 'rotate(3deg)',

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { hoverScale, tapScale } from '../../lib/motionConfig';
 
 const Footer = () => {
     const coordinators = {
@@ -35,16 +36,11 @@ const Footer = () => {
             <div className="container mx-auto px-4 md:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
 
-                    {/* Brand Section */}
+                    {/* Brand Section — Tier 4: no scroll-triggered animation */}
                     <div className="lg:col-span-1">
-                        <motion.h3
-                            className="text-accent font-serif text-2xl font-bold mb-6 tracking-tight"
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
+                        <h3 className="text-accent font-serif text-2xl font-bold mb-6 tracking-tight">
                             GFG CAMPUS BODY KARE
-                        </motion.h3>
+                        </h3>
                         <p className="text-sm leading-relaxed mb-8 max-w-xs opacity-70">
                             A student-driven technical community nurturing future leaders through coding excellence, innovation, and peer collaboration.
                         </p>
@@ -103,8 +99,8 @@ const Footer = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-full border border-secondary/50 flex items-center justify-center text-text-muted hover:text-accent hover:border-accent group transition-all duration-300"
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.95 }}
+                                    whileHover={hoverScale}
+                                    whileTap={tapScale}
                                     aria-label={social.name}
                                 >
                                     <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">

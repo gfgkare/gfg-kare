@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { t4Transition } from '../../lib/motionConfig';
+import MagneticButton from '../../lib/MagneticButton';
 
 import logo from '../../assets/logo.png';
 
@@ -33,11 +35,12 @@ const Navbar = () => {
     };
 
     return (
+        // Tier 4 — minimal fade entrance; no large displacement
         <motion.nav
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'py-4 bg-bg-surface/90 backdrop-blur-md border-b border-secondary' : 'py-6 bg-transparent'}`}
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={t4Transition}
         >
             <div className="container flex justify-between items-center">
                 <Link to="/" className="font-serif text-xl font-bold tracking-wider flex items-center gap-4 group">
@@ -76,12 +79,14 @@ const Navbar = () => {
                         </li>
                     ))}
                     <li>
-                        <button
-                            onClick={() => scrollToSection('footer')}
-                            className="btn btn-primary ml-4"
-                        >
-                            Join Us
-                        </button>
+                        <MagneticButton className="ml-4">
+                            <button
+                                onClick={() => scrollToSection('footer')}
+                                className="btn btn-primary"
+                            >
+                                Join Us
+                            </button>
+                        </MagneticButton>
                     </li>
                 </ul>
 
