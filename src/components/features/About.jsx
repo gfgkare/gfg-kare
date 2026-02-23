@@ -8,7 +8,6 @@ import {
 
 const stats = [
   { value: "30+", label: "Events Organized" },
-  { value: "30+", label: "Event Organized" },
   { value: "6", label: "EE Credits over this Academic Year" },
 ];
 
