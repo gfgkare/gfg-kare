@@ -41,6 +41,7 @@ import third from "../assets/hackheist(winners)/third.jpg";
 import firstgf from "../assets/geekfest(winners)/firstgf.jpg";
 import secondgf from "../assets/geekfest(winners)/secondgf.jpg";
 import thirdgf from "../assets/geekfest(winners)/thirdgf.jpg";
+import nodp from "../assets/nodp.png";
 export const getEvents = async () => {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 500));
@@ -367,9 +368,9 @@ export const getEventWinners = async (eventId) => {
     const WINNERS_DATABASE = {
         101: { //AlgoTussle
             topWinners: [
-                { id: 1, name: "Rajveer Singh", position: 1, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rajveer"},
-                { id: 2, name: "Penchala Prasad Lakkakula", position: 2, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul"},
-                { id: 3, name: "Mohammed Ashfaqul Haq", position: 3, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ashfaqul"},
+                { id: 1, name: "Rajveer Singh", position: 1, image: nodp},
+                { id: 2, name: "Penchala Prasad Lakkakula", position: 2, image: nodp},
+                { id: 3, name: "Mohammed Ashfaqul Haq", position: 3, image: nodp},
             ],
             allWinners: []
         },
@@ -391,9 +392,9 @@ export const getEventWinners = async (eventId) => {
         },
         104: { // National Skill UP
             topWinners: [
-                { id: 1, name: "Rahul S.", position: 1, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul"},
-                { id: 2, name: "Meera J.", position: 2, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Kavya"},
-                { id: 3, name: "Kiran P.", position: 3, image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rajveer"},
+                { id: 1, name: "Rahul S.", position: 1, image: nodp},
+                { id: 2, name: "Meera J.", position: 2, image: nodp},
+                { id: 3, name: "Kiran P.", position: 3, image: nodp},
             ],
             allWinners: []
         }

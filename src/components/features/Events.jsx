@@ -6,7 +6,7 @@ import Algorithmist_poster from '../../assets/Algorithmist_poster.jpeg';
 import hackheist from '../../assets/hackheist.jpg';
 import nationalSkillup from '../../assets/nationalSkillup.jpg';
 import GeekFest from '../../assets/GeekFest.jpg';
-import outbreak from '../../assets/outbreak.jpeg';
+import outbreak from '../../assets/outbreak.png';
 import algotussle from '../../assets/algotussle.jpg';
 import {
     t2Initial, t2WhileInView, t2Viewport, t2Transition,

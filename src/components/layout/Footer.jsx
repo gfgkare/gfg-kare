@@ -120,8 +120,8 @@ const Footer = () => {
                         © {new Date().getFullYear()} GFG CAMPUS BODY KARE. ALL RIGHTS RESERVED.
                     </p>
                     <div className="flex items-center gap-2 opacity-30 text-[10px] uppercase tracking-[0.2em]">
-                        <span>Secure Verification: </span>
-                        <span className="font-mono">KARE-GFG-STABLE-v2</span>
+                        <span>Developed by  </span>
+                        <span className="font-mono">DEEPA MANYAM</span>
                     </div>
                 </div>
             </div>
