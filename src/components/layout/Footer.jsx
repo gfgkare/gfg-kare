@@ -34,7 +34,7 @@ const Footer = () => {
             <h2 className="sr-only">GFG CAMPUS BODY KARE</h2>
 
             <div className="container mx-auto px-4 md:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
 
                     {/* Brand Section — Tier 4: no scroll-triggered animation */}
                     <div className="lg:col-span-1">
@@ -116,10 +116,10 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="pt-12 border-t border-secondary/10 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <p className="text-[10px] uppercase tracking-[0.3em] font-medium opacity-50">
+                    <p className="text-[10px] uppercase tracking-[0.3em] font-medium opacity-70">
                         © {new Date().getFullYear()} GFG CAMPUS BODY KARE. ALL RIGHTS RESERVED.
                     </p>
-                    <div className="flex items-center gap-2 opacity-30 text-[10px] uppercase tracking-[0.2em]">
+                    <div className="flex items-center gap-2 opacity-70 text-[10px] uppercase tracking-[0.3em]">
                         <span>Developed by  </span>
                         <span className="font-mono">DEEPA MANYAM</span>
                     </div>
