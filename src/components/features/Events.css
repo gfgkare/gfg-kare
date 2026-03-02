@@ -73,3 +73,86 @@
     text-transform: uppercase;
     font-size: 0.9rem;
 }
+
+/* ===== CONSISTENT IMAGE HEIGHT — ONGOING & UPCOMING ===== */
+.ongoing-event .relative.h-\[60vh\],
+.upcoming-event .relative.h-\[60vh\] {
+    height: 65vh !important;
+}
+
+/* ===== REDUCE GAP AFTER ABOUT SECTION ===== */
+#about {
+    padding-bottom: 2rem !important;
+}
+
+/* ===== MOBILE OVERRIDES — ONGOING & UPCOMING EVENT ONLY (≤ 768px) ===== */
+@media (max-width: 768px) {
+
+    /* About section — tighter on mobile */
+    #about {
+        padding-top: 2rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    /* Reduce spacing below ongoing section */
+    .ongoing-event {
+        margin-bottom: 2.5rem !important;
+    }
+
+    /* Section label — "Ongoing Event" / "Upcoming Event" */
+    .ongoing-event>div:first-child h3,
+    .upcoming-event>div:first-child h3 {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* Consistent image height on mobile */
+    .ongoing-event .relative.h-\[60vh\],
+    .upcoming-event .relative.h-\[60vh\] {
+        height: 60vh !important;
+    }
+
+    /* Content panel padding */
+    .ongoing-event .bg-bg-surface,
+    .upcoming-event .bg-bg-surface {
+        padding: 1.5rem 1.25rem !important;
+    }
+
+    /* Badge ("Live Now" / "Upcoming") */
+    .ongoing-event .inline-block.py-1,
+    .upcoming-event .inline-block.py-1 {
+        font-size: 0.65rem !important;
+        padding: 0.15rem 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* Event title */
+    .ongoing-event .text-glow,
+    .upcoming-event .text-glow {
+        font-size: 1.4rem !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    /* Date */
+    .ongoing-event .tracking-widest.mb-8,
+    .upcoming-event .tracking-widest.mb-8 {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    /* Description */
+    .ongoing-event .leading-relaxed,
+    .upcoming-event .leading-relaxed {
+        font-size: 0.85rem !important;
+        margin-bottom: 1rem !important;
+        padding-left: 0.75rem !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Button */
+    .ongoing-event .btn.btn-primary,
+    .upcoming-event .btn.btn-primary {
+        font-size: 0.8rem !important;
+        padding: 0.45rem 1.1rem !important;
+    }
+}

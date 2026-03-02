@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import './Events.css';
 import WinnersModal from './WinnersModal';
 import TiltCard from '../../lib/TiltCard';
 import Algorithmist_poster from '../../assets/Algorithmist_poster.jpeg';
@@ -8,11 +9,7 @@ import nationalSkillup from '../../assets/nationalSkillup.jpg';
 import GeekFest from '../../assets/GeekFest.jpg';
 import outbreak from '../../assets/outbreak.png';
 import algotussle from '../../assets/algotussle.jpg';
-import {
-    t2Initial, t2WhileInView, t2Viewport, t2Transition,
-    hoverScale, tapScale,
-    fadeInitial, fadeWhileInView,
-} from '../../lib/motionConfig';
+import { hoverScale, tapScale } from '../../lib/motionConfig';
 import MagneticButton from '../../lib/MagneticButton';
 
 const EVENTS_DATA = {
@@ -38,7 +35,6 @@ const EVENTS_DATA = {
             image: algotussle,
             linkedin: "https://www.instagram.com/p/DUn43Szjzow/?utm_source=ig_web_copy_link"
         },
-
         {
             id: 102,
             title: "GeekFest",
@@ -52,7 +48,6 @@ const EVENTS_DATA = {
             description: "A 24-hour hackathon focused on building impactful real-world solutions.",
             image: hackheist,
             linkedin: "https://www.instagram.com/p/DPrZpuYj2sp/?igsh=a2R0ZWpxcnU0dmhs"
-
         },
         {
             id: 104,
@@ -85,38 +80,29 @@ const Events = () => {
         event,
         badgeText,
         badgeClass,
-        buttonText
+        buttonText,
+        priorityImage = false
     }) => (
         <div className={wrapperClass}>
-            {/* Section label — static, card is the dominant Tier 2 animation */}
             <div className="text-left mb-12">
                 <h3 className="text-4xl font-serif"><span className={sectionAccentClass}>{sectionLabel}</span> <span className="text-text">Event</span></h3>
             </div>
 
-            {/* Tier 2 — one dominant entrance per featured event */}
-            <motion.div
-                className="relative w-full rounded-2xl overflow-hidden border border-secondary/30 group"
-                initial={t2Initial}
-                whileInView={t2WhileInView}
-                viewport={t2Viewport}
-                transition={t2Transition}
-            >
-                <div className="grid grid-cols-1 lg:grid-cols-2 lg:h-[80vh] min-h-[500px]">
-                    <div className="relative h-[60vh] lg:h-full flex items-center justify-center overflow-hidden ...">
+            <div className="relative w-full rounded-2xl overflow-hidden border border-secondary/30 group">
+                <div className="grid grid-cols-1 lg:grid-cols-2 lg:h-[70vh]">
+                    <div className="relative h-[60vh] lg:h-[70vh] flex items-center justify-center overflow-hidden">
                         <img
                             src={event.image}
                             alt={`${event.title} Poster`}
                             className="w-full h-full object-contain p-4 lg:p-8"
+                            decoding="async"
+                            loading={priorityImage ? "eager" : "lazy"}
+                            fetchPriority={priorityImage ? "high" : "low"}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent pointer-events-none"></div>
                     </div>
 
-                    <div className="bg-bg-surface p-10 lg:p-16 flex flex-col justify-center relative overflow-y-auto">
-                        <div className="absolute top-0 right-0 p-6 opacity-10">
-                            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" className="text-accent animate-spin-slow">
-                                <path d="M50 0 L100 50 L50 100 L0 50 Z" stroke="currentColor" strokeWidth="1" />
-                            </svg>
-                        </div>
+                    <div className="bg-bg-surface p-4 lg:p-6 flex flex-col justify-center relative">
 
                         <span className={`inline-block py-1 px-3 rounded-full text-xs font-bold uppercase tracking-widest w-fit mb-6 ${badgeClass}`}>
                             {badgeText}
@@ -133,63 +119,57 @@ const Events = () => {
                             {event.description}
                         </p>
                         <MagneticButton>
-                        <a href={event.link}>
-                            <button className="btn btn-primary self-start">
-                                {buttonText}
-                            </button>
-                        </a>
+                            <a href={event.link}>
+                                <button className="btn btn-primary self-start">
+                                    {buttonText}
+                                </button>
+                            </a>
                         </MagneticButton>
                     </div>
                 </div>
-            </motion.div>
+            </div>
         </div>
     );
 
     return (
-        <section id="events" className="py-12 md:py-14">
+        <section id="events" className="py-3 md:py-6">
             <div className="container">
 
                 {/* --- ONGOING EVENT SECTION --- */}
                 {renderFeaturedEvent({
-                    wrapperClass: 'mb-20',
+                    wrapperClass: 'mb-10 ongoing-event',
                     sectionLabel: 'Ongoing',
                     sectionAccentClass: 'text-green-500',
                     event: EVENTS_DATA.ongoing,
                     badgeText: 'Live Now',
                     badgeClass: 'border border-green-500/40 text-green-500',
-                    buttonText: 'Explore'
+                    buttonText: 'Explore',
+                    priorityImage: true
                 })}
 
                 {/* --- UPCOMING EVENT SECTION --- */}
-                <div className="mb-8">
+                <div className="mb-6">
                     {renderFeaturedEvent({
-                        wrapperClass: '',
+                        wrapperClass: 'upcoming-event',
                         sectionLabel: 'Upcoming',
                         sectionAccentClass: 'text-yellow-500',
                         event: EVENTS_DATA.upcoming,
                         badgeText: 'Upcoming',
                         badgeClass: 'border border-yellow-500/40 text-yellow-500',
-                        buttonText: 'Register Now'
+                        buttonText: 'Register Now',
+                        priorityImage: false
                     })}
                 </div>
 
-
                 {/* --- PAST EVENTS SECTION (Grid Layout) --- */}
                 <div>
-                    {/* Fade-only — heading appears behind; cards carry the y-entrance */}
-                    <motion.div
-                        className="text-left mb-12"
-                        initial={fadeInitial}
-                        whileInView={fadeWhileInView}
-                        viewport={t2Viewport}
-                        transition={{ duration: 0.7, ease: 'easeOut' }}
-                    >
+                    <div className="text-left mb-12">
                         <h2 className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-2">Mission Logs</h2>
                         <h3 className="text-4xl font-serif">
-  <span className="text-red-500">Past</span>{" "}
-  <span className="text-white">Events</span>
-</h3>
-                    </motion.div>
+                            <span className="text-red-500">Past</span>{" "}
+                            <span className="text-white">Events</span>
+                        </h3>
+                    </div>
 
                     {/* Slider Wrapper with side buttons */}
                     <div className="relative group/slider">
@@ -225,14 +205,9 @@ const Events = () => {
                             className="flex overflow-x-auto pb-12 gap-8 snap-x snap-mandatory scrollbar-hide scroll-smooth"
                         >
                             {EVENTS_DATA.past.map((event, index) => (
-                                // Tier 2 — staggered y-entrance + TiltCard for interactive depth
                                 <TiltCard
                                     key={event.id}
                                     className="min-w-[85vw] md:min-w-[400px] snap-center bg-bg-surface border border-secondary/30 rounded-xl overflow-hidden flex flex-col group hover:border-accent/50 transition-colors duration-300"
-                                    initial={t2Initial}
-                                    whileInView={t2WhileInView}
-                                    viewport={t2Viewport}
-                                    transition={{ ...t2Transition, delay: Math.min(index * 0.15, 0.45) }}
                                 >
                                     {/* Image Area */}
                                     <div className="h-48 relative overflow-hidden bg-secondary/10">
@@ -243,6 +218,9 @@ const Events = () => {
                                                 src={event.image}
                                                 alt={event.title}
                                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+                                                decoding="async"
+                                                loading="lazy"
+                                                fetchPriority="low"
                                             />
                                         )}
                                         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
@@ -283,7 +261,6 @@ const Events = () => {
 
             </div>
 
-            {/* Winners Modal — AnimatePresence here enables exit animation before unmount */}
             <AnimatePresence>
                 {selectedEventId && (
                     <WinnersModal

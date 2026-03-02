@@ -147,3 +147,11 @@
   @apply text-transparent bg-clip-text;
   background-image: linear-gradient(to right, #00ff87 50%, #f1f5f9 50%);
 }
+
+@media (max-width: 768px) {
+
+  #cursor-shadow,
+  #cursor-shadow.hover {
+    display: none !important;
+  }
+}

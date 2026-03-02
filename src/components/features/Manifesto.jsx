@@ -4,7 +4,7 @@ import {
     fadeInitial, fadeWhileInView, t3Viewport,
 } from '../../lib/motionConfig';
 
-const PILLARS = ['Precision', 'Collaboration', 'Impact'];
+const PILLARS = ['Collaboration ', ' Precision ', ' Impact'];
 
 /**
  * Manifesto — calm, typography-dominant strip.
@@ -15,7 +15,7 @@ const PILLARS = ['Precision', 'Collaboration', 'Impact'];
  *   - No parallax, no tilt, no pulse. The words carry the rhythm.
  */
 const Manifesto = () => (
-    <section className="py-24 bg-bg border-t border-b border-secondary/10 overflow-hidden">
+    <section className="py-12 bg-bg border-t border-b border-secondary/10 overflow-hidden">
         <div className="container text-center">
 
             {/* Overline — static; no animation so it reads immediately */}
@@ -40,11 +40,11 @@ const Manifesto = () => (
             <div className="w-16 h-[1px] bg-accent/30 mx-auto mb-12" />
 
             {/* Pillars — each fades in independently, 0.15s stagger, opacity only */}
-            <div className="flex justify-center items-center gap-6 md:gap-10 flex-wrap">
+            <div className="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.45em] text-text-muted">
                 {PILLARS.map((pillar, i) => (
                     <React.Fragment key={pillar}>
                         <motion.span
-                            className="text-xs md:text-sm font-bold uppercase tracking-[0.45em] text-text-muted"
+                            className="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.45em] text-text-muted"
                             initial={fadeInitial}
                             whileInView={fadeWhileInView}
                             viewport={t3Viewport}
