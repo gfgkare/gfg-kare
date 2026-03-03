@@ -9,6 +9,7 @@ import nationalSkillup from '../../assets/nationalSkillup.jpg';
 import GeekFest from '../../assets/GeekFest.jpg';
 import outbreak from '../../assets/outbreak.png';
 import algotussle from '../../assets/algotussle.jpg';
+import algorythms from '../../assets/algorythms.jpeg';
 import { hoverScale, tapScale } from '../../lib/motionConfig';
 import MagneticButton from '../../lib/MagneticButton';
 
@@ -24,33 +25,39 @@ const EVENTS_DATA = {
         title: "OUT BREAK'26",
         date: "March 30-31, 2026",
         description: "This is a 24-Hour Hackathon designed to isolate and amplify elite coding capabilities.",
-        image: outbreak,
-        link: "https://gfgkare-out-break-26.vercel.app/"
+        image: outbreak
     },
     past: [
         {
             id: 101,
+            title: "AlgoRythms(R2)|Algorithmist'26",
+            description: "A structured algorithm mastery challenge centered on in-depth technical understanding.",
+            image: algorythms,
+            linkedin: "https://www.instagram.com/p/DVG598ejzwE/?igsh=MWwzY2M5MTdjYmRtMA=="
+        },
+        {
+            id: 102,
             title: "AlgoTussle(R1)|Algorithmist'26",
             description: "A competitive quiz evaluating algorithmic thinking and complexity analysis.",
             image: algotussle,
             linkedin: "https://www.instagram.com/p/DUn43Szjzow/?utm_source=ig_web_copy_link"
         },
         {
-            id: 102,
+            id: 103,
             title: "GeekFest",
             description: "An exciting coding competition designed to test logic and speed.",
             image: GeekFest,
             linkedin: "https://www.instagram.com/p/DQjgSIeD6n2/?igsh=MTVwcjNhMW9hcjF6NA=="
         },
         {
-            id: 103,
+            id: 104,
             title: "HackHeist",
             description: "A 24-hour hackathon focused on building impactful real-world solutions.",
             image: hackheist,
             linkedin: "https://www.instagram.com/p/DPrZpuYj2sp/?igsh=a2R0ZWpxcnU0dmhs"
         },
         {
-            id: 104,
+            id: 105,
             title: "National Skill UP",
             description: "Nationwide campaign for technical upskilling.",
             image: nationalSkillup,
@@ -156,7 +163,7 @@ const Events = () => {
                         event: EVENTS_DATA.upcoming,
                         badgeText: 'Upcoming',
                         badgeClass: 'border border-yellow-500/40 text-yellow-500',
-                        buttonText: 'Register Now',
+                        buttonText: 'Register',
                         priorityImage: false
                     })}
                 </div>
