@@ -119,7 +119,7 @@ const Footer = () => {
                     <p className="text-[10px] uppercase tracking-[0.3em] font-medium opacity-70">
                         © {new Date().getFullYear()} GFG CAMPUS BODY KARE. ALL RIGHTS RESERVED.
                     </p>
-                    <div className="flex items-center gap-2 opacity-70 text-[10px] uppercase tracking-[0.3em]">
+                    <div className="flex items-center gap-2 opacity-25 text-[10px] uppercase tracking-[0.2em]">
                         <span>Developed by  </span>
                         <span className="font-mono">DEEPA MANYAM</span>
                     </div>
