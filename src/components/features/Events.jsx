@@ -25,7 +25,8 @@ const EVENTS_DATA = {
         date: "March 30-31, 2026",
         description: "This is a 24-Hour Hackathon designed to isolate and amplify elite coding capabilities.",
         image: outbreak,
-        link: "https://gfgkare-out-break-26.vercel.app/"
+        link: ""
+        // https://gfgkare-out-break-26.vercel.app/
     },
     past: [
         {
@@ -156,7 +157,7 @@ const Events = () => {
                         event: EVENTS_DATA.upcoming,
                         badgeText: 'Upcoming',
                         badgeClass: 'border border-yellow-500/40 text-yellow-500',
-                        buttonText: 'Register Now',
+                        buttonText: 'Registration Opens Soon',
                         priorityImage: false
                     })}
                 </div>

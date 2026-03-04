@@ -7,7 +7,6 @@ const Footer = () => {
         student: [
             { name: "Anirudh NC", phone: "+91 99660 66070" },
             { name: "Rakshan Ananth", phone: "+91 90035 13022" },
-            { name: "Shruthi M", phone: "+91 88708 67242" },
             { name: "Venunadh P", phone: "+91 91826 46772" }
         ],
         faculty: [
