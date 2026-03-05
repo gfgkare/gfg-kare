@@ -31,7 +31,7 @@ const EVENTS_DATA = {
     past: [
         {
             id: 101,
-            title: "AlgoTussle(R1)|Algorithmist'26",
+            title: "AlgoTussle(R2)|Algorithmist'26",
             description: "A competitive quiz evaluating algorithmic thinking and complexity analysis.",
             image: algotussle,
             linkedin: "https://www.instagram.com/p/DUn43Szjzow/?utm_source=ig_web_copy_link"

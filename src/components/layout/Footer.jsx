@@ -115,7 +115,7 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="pt-12 border-t border-secondary/10 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <p className="text-[10px] uppercase tracking-[0.3em] font-medium opacity-70">
+                    <p className="text-[10px] uppercase tracking-[0.3em] font-medium opacity-45">
                         © {new Date().getFullYear()} GFG CAMPUS BODY KARE. ALL RIGHTS RESERVED.
                     </p>
                     <div className="flex items-center gap-2 opacity-25 text-[10px] uppercase tracking-[0.2em]">
