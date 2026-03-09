@@ -17,14 +17,14 @@ import page2stage from '../../assets/page2stage.jpg';
 const EVENTS_DATA = {
     ongoing: {
         title: "ALGORITHMIST'26",
-        date: "March 15-16, 2026",
+        date: "Feb 11 - Mar 30, 2026",
         description: "The ultimate coding summit where logic meets glory. Two days of intense algorithmic challenges, workshops, and networking with elite developers.",
         image: Algorithmist_poster,
         link: "https://algorithmist26.vercel.app/"
     },
     upcoming: {
         title: "OUT BREAK'26",
-        date: "March 30-31, 2026",
+        date: "Coming Soon , Stay Tuned...",
         description: "This is a 24-Hour Hackathon designed to isolate and amplify elite coding capabilities.",
         image: outbreak,
         link: "#"
