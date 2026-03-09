@@ -366,7 +366,15 @@ export const getEventWinners = async (eventId) => {
     await new Promise(resolve => setTimeout(resolve, 800));
 
     const WINNERS_DATABASE = {
-        101: { //Algorythms
+        101: { //page2stage
+            topWinners: [
+                { id: 1, name: "Chandana Venkateswara Rao", position: 1, image: nodp},
+                { id: 2, name: "Mohammed Aslam S", position: 2, image: nodp},
+                { id: 3, name: "Karli Tejasree", position: 3, image: nodp},
+            ],
+            allWinners: []
+        },
+        102: { //Algorythms
             topWinners: [
                 { id: 1, name: "Jaliparthi Sravanthi", position: 1, image: nodp},
                 { id: 2, name: "Mohammed Aslam S", position: 2, image: nodp},
@@ -374,7 +382,7 @@ export const getEventWinners = async (eventId) => {
             ],
             allWinners: []
         },
-        102: { //AlgoTussle
+        103: { //AlgoTussle
             topWinners: [
                 { id: 1, name: "Rajveer Singh", position: 1, image: nodp},
                 { id: 2, name: "Penchala Prasad Lakkakula", position: 2, image: nodp},
@@ -382,7 +390,7 @@ export const getEventWinners = async (eventId) => {
             ],
             allWinners: []
         },
-        103: { // GeekFest
+        104: { // GeekFest
             topWinners: [
                 { id: 1, name: "Inbathamizhan S", position: 1, image: firstgf},
                 { id: 2, name: " N. Kavya Sri", position: 2, image: secondgf},
@@ -390,7 +398,7 @@ export const getEventWinners = async (eventId) => {
             ],
             allWinners: []
         },
-        104: { // HackHeist
+        105: { // HackHeist
             topWinners: [
                 { id: 1, name: "Coding Ninjas", position: 1, image: first},
                 { id: 2, name: "Wonder Women’s", position: 2, image: second},
@@ -398,7 +406,7 @@ export const getEventWinners = async (eventId) => {
             ],
             allWinners: []
         },
-        105: { // National Skill UP
+        106: { // National Skill UP
             topWinners: [
                 { id: 1, name: "Rahul S.", position: 1, image: nodp},
                 { id: 2, name: "Meera J.", position: 2, image: nodp},

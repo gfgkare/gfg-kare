@@ -10,8 +10,8 @@ const Footer = () => {
             { name: "Venunadh P", phone: "+91 91826 46772" }
         ],
         faculty: [
-            { name: "Mr. R. Rajasekar", role: "Assistant Professor / CSE" },
-            { name: "Ms. S. Reshni", role: "Assistant Professor / CSE" }
+            { name: "Mr. R. Raja Sekar", role: "Assistant Professor / CSE" },
+            { name: "Mrs. S. Reshni", role: "Assistant Professor / CSE" }
         ]
     };
 
