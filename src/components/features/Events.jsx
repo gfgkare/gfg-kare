@@ -16,14 +16,14 @@ import MagneticButton from '../../lib/MagneticButton';
 const EVENTS_DATA = {
     ongoing: {
         title: "ALGORITHMIST'26",
-        date: "March 15-16, 2026",
+        date: "Feb 11 - Mar 30, 2026",
         description: "The ultimate coding summit where logic meets glory. Two days of intense algorithmic challenges, workshops, and networking with elite developers.",
         image: Algorithmist_poster,
         link: "https://algorithmist26.vercel.app/"
     },
     upcoming: {
         title: "OUT BREAK'26",
-        date: "March 30-31, 2026",
+        date: "Coming Soon , Stay Tuned...",
         description: "This is a 24-Hour Hackathon designed to isolate and amplify elite coding capabilities.",
         image: outbreak,
         link: "#"
@@ -32,14 +32,14 @@ const EVENTS_DATA = {
     past: [
         {
             id: 101,
-            title: "AlgoRythms(R2)|Algorithmist'26",
+            title: "AlgoRythms | Algorithmist'26",
             description: "A structured algorithm mastery challenge",
             image: algorythms,
             linkedin: "https://www.instagram.com/p/DVG598ejzwE/?igsh=MWwzY2M5MTdjYmRtMA=="
         },
         {
             id: 102,
-            title: "AlgoTussle(R1)|Algorithmist'26",
+            title: "AlgoTussle | Algorithmist'26",
             description: "A competitive quiz evaluating algorithmic thinking and complexity analysis.",
             image: algotussle,
             linkedin: "https://www.instagram.com/p/DUn43Szjzow/?utm_source=ig_web_copy_link"
