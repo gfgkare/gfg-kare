@@ -8,7 +8,7 @@ import {
 
 const stats = [
   { value: "30+", label: "Events Organized" },
-  { value: "6", label: "EE Credits over this Academic Year" },
+  { value: "4", label: "EE Credits over this Academic Year" },
 ];
 
 const About = () => {
