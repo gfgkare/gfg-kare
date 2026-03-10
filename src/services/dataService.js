@@ -38,6 +38,7 @@ import Jagadeesh from "../assets/founders/Jagadeesh.jpg";
 import first from "../assets/hackheist(winners)/first.jpg";
 import second from "../assets/hackheist(winners)/second.jpg";
 import third from "../assets/hackheist(winners)/third.jpg";
+import fourth from "../assets/hackheist(winners)/fourth.png";
 import firstgf from "../assets/geekfest(winners)/firstgf.jpg";
 import secondgf from "../assets/geekfest(winners)/secondgf.jpg";
 import thirdgf from "../assets/geekfest(winners)/thirdgf.jpg";
@@ -403,6 +404,7 @@ export const getEventWinners = async (eventId) => {
                 { id: 1, name: "Coding Ninjas", position: 1, image: first},
                 { id: 2, name: "Wonder Women’s", position: 2, image: second},
                 { id: 3, name: "Moon Team", position: 3, image: third},
+                {id: 4, name: "Binary Brains", position: 4, image: fourth}
             ],
             allWinners: []
         },

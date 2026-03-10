@@ -61,7 +61,7 @@ const WinnersModal = ({ eventId, onClose }) => {
     const winners = data?.winners?.length
         ? data.winners
         : (data?.topWinners || []).map((winner, idx) => ({
-            rank: winner.rank || (idx === 0 ? '1st' : idx === 1 ? '2nd' : '3rd'),
+            rank: winner.rank || (idx === 0 ? '1st' : idx === 1 ? '2nd' :idx === 2 ? '3rd' : '4th'),
             title: winner.project || winner.title || winner.name,
             image: winner.image,
         }));
