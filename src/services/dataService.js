@@ -80,7 +80,7 @@ export const getTeam = async () => {
     return [
         {
             id: 1,
-            name: "Mr Raja Sekar R",
+            name: "Mr RAJA SEKAR R",
             role: "Faculty Coordinator",
             tenure: "faculty",
             image: rajashekar,
@@ -88,7 +88,7 @@ export const getTeam = async () => {
         },
         {
             id: 2,
-            name: "Mrs RESHNI SURESH",
+            name: "Mrs RESHNI S",
             role: "Faculty Coordinator",
             tenure: "faculty",
             image: reshni,
