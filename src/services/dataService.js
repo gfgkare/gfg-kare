@@ -43,6 +43,10 @@ import firstgf from "../assets/geekfest(winners)/firstgf.jpg";
 import secondgf from "../assets/geekfest(winners)/secondgf.jpg";
 import thirdgf from "../assets/geekfest(winners)/thirdgf.jpg";
 import nodp from "../assets/nodp.png";
+import firstui from "../assets/uidopple/firstui.jpg";
+import secondui from "../assets/uidopple/secondui.jpg";
+import thirdui from "../assets/uidopple/thirdui.jpg";
+import fourthui from "../assets/uidopple/fourthui.jpg";
 export const getEvents = async () => {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 500));
@@ -367,7 +371,16 @@ export const getEventWinners = async (eventId) => {
     await new Promise(resolve => setTimeout(resolve, 800));
 
     const WINNERS_DATABASE = {
-        101: { //page2stage
+        101: { //UIdoppleganger
+            topWinners: [
+                { id: 1, name: "PONAKA VENKATA SAI–KARE", position: 1, image: firstui},
+                { id: 2, name: "Prasanna Venketesh S–KARE", position: 2, image: secondui},
+                { id: 3, name: "Dhakshina Sri P–Ramco Institute of Technology", position: 3, image: thirdui},
+                {id: 4, name: "Revathi P–P.S.R Engineering College", position: 4, image: fourthui}
+            ],
+            allWinners: []
+        },
+        102: { //page2stage
             topWinners: [
                 { id: 1, name: "Chandana Venkateswara Rao", position: 1, image: nodp},
                 { id: 2, name: "Mohammed Aslam S", position: 2, image: nodp},
@@ -375,7 +388,7 @@ export const getEventWinners = async (eventId) => {
             ],
             allWinners: []
         },
-        102: { //Algorythms
+        103: { //Algorythms
             topWinners: [
                 { id: 1, name: "Jaliparthi Sravanthi", position: 1, image: nodp},
                 { id: 2, name: "Mohammed Aslam S", position: 2, image: nodp},
@@ -383,7 +396,7 @@ export const getEventWinners = async (eventId) => {
             ],
             allWinners: []
         },
-        103: { //AlgoTussle
+        104: { //AlgoTussle
             topWinners: [
                 { id: 1, name: "Rajveer Singh", position: 1, image: nodp},
                 { id: 2, name: "Penchala Prasad Lakkakula", position: 2, image: nodp},
@@ -391,7 +404,7 @@ export const getEventWinners = async (eventId) => {
             ],
             allWinners: []
         },
-        104: { // GeekFest
+        105: { // GeekFest
             topWinners: [
                 { id: 1, name: "Inbathamizhan S", position: 1, image: firstgf},
                 { id: 2, name: " N. Kavya Sri", position: 2, image: secondgf},
@@ -399,7 +412,7 @@ export const getEventWinners = async (eventId) => {
             ],
             allWinners: []
         },
-        105: { // HackHeist
+        106: { // HackHeist
             topWinners: [
                 { id: 1, name: "Coding Ninjas", position: 1, image: first},
                 { id: 2, name: "Wonder Women’s", position: 2, image: second},
@@ -408,7 +421,7 @@ export const getEventWinners = async (eventId) => {
             ],
             allWinners: []
         },
-        106: { // National Skill UP
+        107: { // National Skill UP
             topWinners: [
                 { id: 1, name: "Rahul S.", position: 1, image: nodp},
                 { id: 2, name: "Meera J.", position: 2, image: nodp},
