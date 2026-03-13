@@ -36,7 +36,7 @@ const EVENTS_DATA = {
             title: "UI-DOPPLE GANGER 2026",
             description: "A frontend design competition that highlighted creativity and UI development skills",
             image: uidoppleganger,
-            linkedin: "https://www.instagram.com/p/DVfQCo_DygF/?igsh=MWlsY2dwa2dnMnA3Zg=="
+            linkedin: "https://www.instagram.com/p/DV1JeesDxSz/?igsh=MWplZmQzYWJ2YTd1eQ=="
         },
         {
             id: 102,
