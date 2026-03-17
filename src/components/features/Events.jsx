@@ -14,6 +14,7 @@ import { hoverScale, tapScale } from '../../lib/motionConfig';
 import MagneticButton from '../../lib/MagneticButton';
 import page2stage from '../../assets/page2stage.jpg';
 import uidoppleganger from '../../assets/uidoppleganger.jpg';
+import algosniff from '../../assets/algosniff.jpg';
 const EVENTS_DATA = {
     ongoing: {
         title: "ALGORITHMIST'26",

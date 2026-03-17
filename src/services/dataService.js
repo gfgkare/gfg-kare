@@ -373,9 +373,9 @@ export const getEventWinners = async (eventId) => {
     const WINNERS_DATABASE = {
         101: { //Algo Sniff
             topWinners: [
-                { id: 1, name: "Mohammed Aslam S", position: 1, image: firstAL4},
-                { id: 2, name: "Yuvej kumar", position: 2, image: secondAL4},
-                { id: 3, name: "Penchala Prasad Lakkakula", position: 3, image: thirdAL4}
+                { id: 1, name: "Mohammed Aslam S", position: 1, image: nodp},
+                { id: 2, name: "Yuvej kumar", position: 2, image: nodp},
+                { id: 3, name: "Penchala Prasad Lakkakula", position: 3, image: nodp},
             ],
             allWinners: []
         },
