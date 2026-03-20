@@ -37,7 +37,7 @@ const EVENTS_DATA = {
             title: "Algo Sniff|Algorithmist'26",
             description: "An exciting challenge designed to test participants debugging skills and problem-solving abilities",
             image: algosniff,
-            linkedin:"https://www.instagram.com/p/DV1JeesDxSz/?igsh=MWplZmQzYWJ2YTd1eQ=="
+            linkedin:"https://www.instagram.com/p/DWA81Epjz6d/?igsh=OG41cnBnNnhzdjll"
         },
         {
             id: 102,
