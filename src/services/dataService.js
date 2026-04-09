@@ -406,9 +406,9 @@ export const getEventWinners = async (eventId) => {
         },
         105: { //AlgoTussle
             topWinners: [
-                { id: 1, name: "Rajveer Singh", position: 1, image: nodp},
-                { id: 2, name: "Penchala Prasad Lakkakula", position: 2, image: nodp},
-                { id: 3, name: "Mohammed Ashfaqul Haq", position: 3, image: nodp},
+                { id: 1, name: "Penchala Prasad Lakkakula", position: 1, image: nodp},
+                { id: 2, name: "Mohammed Ashfaqul Haq", position: 2, image: nodp},
+                { id: 3, name: "CHANDANA VENKATESWARA RAO", position: 3, image: nodp},
             ],
             allWinners: []
         },
