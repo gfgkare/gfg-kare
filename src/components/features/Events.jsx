@@ -38,7 +38,7 @@ const EVENTS_DATA = {
             title: "CodeBlitz|Algorithmist'26",
             description: "An elite challenge environment testing contestants in advanced problem solving, algorithm design, and real-time coding execution",
             image: codeblitz,
-            linkedin:"https://www.instagram.com/p/DWA81Epjz6d/?igsh=OG41cnBnNnhzdjll"
+            linkedin:"https://www.instagram.com/p/DWff6iDD7EM/?igsh=MTYydDh2ejhmdW52bg=="
         },
         {
             id: 102,
