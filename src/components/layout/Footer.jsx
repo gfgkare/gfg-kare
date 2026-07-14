@@ -10,7 +10,7 @@ const Footer = () => {
             { name: "Venunadh P", phone: "+91 91826 46772" }
         ],
         faculty: [
-            { name: "Mr. R. Raja Sekar", role: "Assistant Professor / CSE" },
+            { name: "Dr. R. Raja Sekar", role: "Assistant Professor / CSE" },
             { name: "Mrs. S. Reshni", role: "Assistant Professor / CSE" }
         ]
     };
@@ -119,7 +119,7 @@ const Footer = () => {
                     </p>
                     <div className="flex items-center gap-2 opacity-25 text-[10px] uppercase tracking-[0.3em]">
                         <span>Developed by  </span>
-                        <span className="font-mono">DEEPA MANYAM</span>
+                        <span className="font-mono">2025-26 BATCH</span>
                     </div>
                 </div>
             </div>
