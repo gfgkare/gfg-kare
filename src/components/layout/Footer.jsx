@@ -11,7 +11,7 @@ const Footer = () => {
         ],
         faculty: [
             { name: "Dr. R. Raja Sekar", role: "Assistant Professor / CSE" },
-            { name: "Mrs. S. Reshni", role: "Assistant Professor / CSE" }
+            { name: "Mrs. S. Shanmuga Priya", role: "Assistant Professor / CSE" }
         ]
     };
 
