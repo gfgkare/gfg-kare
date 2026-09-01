@@ -5,9 +5,9 @@ import { hoverScale, tapScale } from '../../lib/motionConfig';
 const Footer = () => {
     const coordinators = {
         student: [
-            { name: "Anirudh NC", phone: "+91 99660 66070" },
-            { name: "Rakshan Ananth", phone: "+91 90035 13022" },
-            { name: "Venunadh P", phone: "+91 91826 46772" }
+            { name: "Harshvardhan Reddy L", phone: "+91 9100550609" },
+            { name: "Harshika Suryanjali", phone: "+91 9502795304" },
+            { name: "Aruna Lavanuru", phone: "+91 7780294844" }
         ],
         faculty: [
             { name: "Dr. R. Raja Sekar", role: "Assistant Professor / CSE" },

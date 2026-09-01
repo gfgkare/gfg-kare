@@ -16,85 +16,25 @@ import page2stage from '../../assets/page2stage.jpg';
 import uidoppleganger from '../../assets/uidoppleganger.jpg';
 import algosniff from '../../assets/algosniff.jpg';
 import codeblitz from '../../assets/codeblitz.jpg';
+import outbreakVideo from '../../assets/oubreak2k26(winners)/outbreak2k26.mp4';
+import logo from '../../assets/logo.png';
 const EVENTS_DATA = {
-    ongoing: {
-        title: "ALGORITHMIST'26",
-        date: "Feb 11 - Mar 30, 2026",
-        description: "The ultimate coding summit where logic meets glory. Two days of intense algorithmic challenges, workshops, and networking with elite developers.",
-        image: Algorithmist_poster,
-        link: "https://algorithmist26.vercel.app/"
-    },
+    ongoing: null,
     upcoming: {
-        title: "OUT BREAK'26",
-        date: "Coming Soon , Stay Tuned...",
-        description: "This is a 24-Hour Hackathon designed to isolate and amplify elite coding capabilities.",
-        image: outbreak,
+        title: "Coming Soon",
+        date: "Stay Tuned...",
+        description: "Stay tuned for more exciting events, hackathons, and challenges from us.",
+        image: logo,
         link: "#"
-        // https://gfgkare-out-break-26.vercel.app/
     },
     past: [
         {
-            id: 101,
-            title: "CodeBlitz|Algorithmist'26",
-            description: "An elite challenge environment testing contestants in advanced problem solving, algorithm design, and real-time coding execution",
-            image: codeblitz,
-            linkedin:"https://www.instagram.com/p/DWff6iDD7EM/?igsh=MTYydDh2ejhmdW52bg=="
-        },
-        {
-            id: 102,
-            title: "Algo Sniff|Algorithmist'26",
-            description: "An exciting challenge designed to test participants debugging skills and problem-solving abilities",
-            image: algosniff,
-            linkedin:"https://www.instagram.com/p/DWA81Epjz6d/?igsh=OG41cnBnNnhzdjll"
-        },
-        {
-            id: 103,
-            title: "UI-DOPPLE GANGER 2026",
-            description: "A frontend design competition that highlighted creativity and UI development skills",
-            image: uidoppleganger,
-            linkedin: "https://www.instagram.com/p/DV1JeesDxSz/?igsh=MWplZmQzYWJ2YTd1eQ=="
-        },
-        {
-            id: 104,
-            title: "Page2Stage|Algorithmist'26",
-            description: "Where ideas met algorithms, and the sharpest minds turned logic into innovation",
-            image: page2stage,
-            linkedin: "https://www.instagram.com/p/DVfQCo_DygF/?igsh=MWlsY2dwa2dnMnA3Zg=="
-        },
-        {
-            id: 105,
-            title: "AlgoRythms|Algorithmist'26",
-            description: "A structured algorithm mastery challenge",
-            image: algorythms,
-            linkedin: "https://www.instagram.com/p/DVG598ejzwE/?igsh=MWwzY2M5MTdjYmRtMA=="
-        },
-        {
-            id: 106,
-            title: "AlgoTussle|Algorithmist'26",
-            description: "A competitive quiz evaluating algorithmic thinking and complexity analysis.",
-            image: algotussle,
-            linkedin: "https://www.instagram.com/p/DUn43Szjzow/?utm_source=ig_web_copy_link"
-        },
-        {
-            id: 107,
-            title: "GeekFest",
-            description: "An exciting coding competition designed to test logic and speed.",
-            image: GeekFest,
-            linkedin: "https://www.instagram.com/p/DQjgSIeD6n2/?igsh=MTVwcjNhMW9hcjF6NA=="
-        },
-        {
-            id: 108,
-            title: "HackHeist",
-            description: "A 24-hour hackathon focused on building impactful real-world solutions.",
-            image: hackheist,
-            linkedin: "https://www.instagram.com/p/DPrZpuYj2sp/?igsh=a2R0ZWpxcnU0dmhs"
-        },
-        {
-            id: 109,
-            title: "National Skill UP",
-            description: "Nationwide campaign for technical upskilling.",
-            image: nationalSkillup,
-            linkedin: "https://www.instagram.com/p/DOdiaZvjw7A/?igsh=azJxYmRjZTNwMDNo"
+            id: 110,
+            title: "OUT BREAK'26",
+            description: "This is a 24-Hour Hackathon designed to isolate and amplify elite coding capabilities.",
+            image: outbreak,
+            linkedin: outbreakVideo,
+            buttonText: "Watch Video"
         }
     ]
 };
@@ -176,7 +116,7 @@ const Events = () => {
             <div className="container">
 
                 {/* --- ONGOING EVENT SECTION --- */}
-                {renderFeaturedEvent({
+                {EVENTS_DATA.ongoing && renderFeaturedEvent({
                     wrapperClass: 'mb-10 ongoing-event',
                     sectionLabel: 'Ongoing',
                     sectionAccentClass: 'text-green-500',
@@ -282,7 +222,7 @@ const Events = () => {
                                                 rel="noopener noreferrer"
                                                 className="flex-1 py-3 text-xs font-bold uppercase tracking-wider border border-secondary text-text rounded-full hover:bg-secondary hover:text-white transition-all text-center"
                                             >
-                                                Visit Site
+                                                {event.buttonText || "Visit Site"}
                                             </a>
 
                                             <button

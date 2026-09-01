@@ -47,6 +47,9 @@ import firstui from "../assets/uidopple/firstui.jpg";
 import secondui from "../assets/uidopple/secondui.jpg";
 import thirdui from "../assets/uidopple/thirdui.jpg";
 import fourthui from "../assets/uidopple/fourthui.jpg";
+import firstob from "../assets/oubreak2k26(winners)/firstprize.png";
+import secondob from "../assets/oubreak2k26(winners)/secondprize.png";
+import thirdob from "../assets/oubreak2k26(winners)/thirdprize.png";
 export const getEvents = async () => {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 500));
@@ -279,7 +282,7 @@ export const getTeam = async () => {
             id: 6,
             name: "Anirudh N C",
             role: "Campus Mantri",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: campus_mantri,
             linkedin: "https://www.linkedin.com/in/anirudh-naginayani-cheruvu-a1b720289/"
         },
@@ -287,7 +290,7 @@ export const getTeam = async () => {
             id: 7,
             name: "Rakshan Ananth M",
             role: "Chairperson",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: rakshan,
             linkedin: "https://www.linkedin.com/in/rakshan-ananth-m/"
         },
@@ -295,7 +298,7 @@ export const getTeam = async () => {
             id: 8,
             name: "Vijayashekhar C",
             role: "Technical Lead",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: vijayashekhar,
             linkedin: "https://www.linkedin.com/in/vijayashekarc/"
         },
@@ -303,7 +306,7 @@ export const getTeam = async () => {
             id: 9,
             name: "Sushmitha N",
             role: "PR & Outreach",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: shushmitha,
             linkedin: "https://www.linkedin.com/in/sushmitha-n-379804323/"
         },
@@ -311,7 +314,7 @@ export const getTeam = async () => {
             id: 10,
             name: "Deepa M",
             role: "Web Developer",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: deepa,
             linkedin: "https://www.linkedin.com/in/manyam-deepa-3ba988302/"
         },
@@ -319,7 +322,7 @@ export const getTeam = async () => {
             id: 11,
             name: "Yashwanth K",
             role: "Design & Creative",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: yaswanth, // ✅ KEEP AVATAR
             linkedin: "https://www.linkedin.com/in/yashwanth-kasa-b5222a247/"
         },
@@ -327,7 +330,7 @@ export const getTeam = async () => {
             id: 12,
             name: "Harpreet",
             role: "Social Media",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: harpreet, // ✅ NOW MATCHES IMPORT
             linkedin: "https://www.linkedin.com/in/harpreet04singh/"
         },
@@ -335,7 +338,7 @@ export const getTeam = async () => {
             id: 13,
             name: "Venunadh P",
             role: "Machine Learning",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: venunadh,
             linkedin: "https://www.linkedin.com/in/venunadh-parimi-1b571034b/"
         },
@@ -343,7 +346,7 @@ export const getTeam = async () => {
             id: 14,
             name: "Shruthi M",
             role: "Events & Operations",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: shruthi,
             linkedin: "https://www.linkedin.com/in/shruthi-pandian-55b123362?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         },
@@ -351,7 +354,7 @@ export const getTeam = async () => {
             id: 15,
             name: "HARSHA VARDHAN L",
             role: "UI/UX Developer",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: harsha,
             linkedin: "https://www.linkedin.com/in/lingalaharshavardhanreddy/"
         },
@@ -359,7 +362,7 @@ export const getTeam = async () => {
             id: 16,
             name: "Abhinay M",
             role: "Associate Event Organiser",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: abhinay,
             linkedin: "https://www.linkedin.com/in/abhinay-reddy-mukkamalla-455893323?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         }
@@ -371,7 +374,7 @@ export const getEventWinners = async (eventId) => {
     await new Promise(resolve => setTimeout(resolve, 800));
 
     const WINNERS_DATABASE = {
-        101: { //codeblitz
+        101: { //code
             topWinners: [
                 { id: 1, name: "Mohammed Aslam S", position: 1, image: nodp},
                 { id: 2, name: "Yuvej kumar", position: 2, image: nodp},
@@ -442,6 +445,14 @@ export const getEventWinners = async (eventId) => {
                 { id: 1, name: "Rahul S.", position: 1, image: nodp},
                 { id: 2, name: "Meera J.", position: 2, image: nodp},
                 { id: 3, name: "Kiran P.", position: 3, image: nodp},
+            ],
+            allWinners: []
+        },
+        110: { // Outbreak2k26
+            topWinners: [
+                { id: 1, name: "Yuvej Kumar, J Maniswar Reddy, Vudugundla Revathi, Pothula Srujana", position: 1, image: firstob},
+                { id: 2, name: "Charishma Devabathini, Sundar Sreekanth, Damalacheruvu Hemasree Reddy, Dwarakacharla Guru Mounika", position: 2, image: secondob},
+                { id: 3, name: "Pulipaka Sanjana, Manukinda Krishnavamsi, Gangireddy Santhosh Reddy, Maddha Chandra Lekha", position: 3, image: thirdob},
             ],
             allWinners: []
         }
