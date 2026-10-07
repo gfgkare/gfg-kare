@@ -87,30 +87,6 @@ export const coreTeam = [
     image: "/assets/currentteam/praneeth.png"
   },
   {
-    id: 8,
-    name: "Valluru Venkata Akshitha",
-    role: "Marketing",
-    position: "Marketing",
-    tenure: "2026–2027 (current)",
-    description: "Building connections, driving participation, and taking the GFG community further.",
-    linkedin: "https://www.linkedin.com/in/akshitha-valluru-977a64381?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    github: "https://github.com/AkshithaaValluru",
-    photo: "/assets/currentteam/akshitha.jpg",
-    image: "/assets/currentteam/akshitha.jpg"
-  },
-  {
-    id: 9,
-    name: "Cheboyina Rohith Ganesh",
-    role: "Marketing",
-    position: "Marketing",
-    tenure: "2026–2027 (current)",
-    description: "Turning ideas into impact and attention into engagement.",
-    linkedin: "https://www.linkedin.com/in/rohith-ganesh-cheboyina-14b919379?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    github: "https://github.com/rohithganeshcheboyina-design",
-    photo: "/assets/currentteam/rohith.jpg",
-    image: "/assets/currentteam/rohith.jpg"
-  },
-  {
     id: 10,
     name: "Omkar Busa",
     role: "Event Management",
@@ -157,7 +133,32 @@ export const coreTeam = [
     github: "https://github.com/chelurimadhureddy-art",
     photo: "/assets/currentteam/madhu.jpg",
     image: "/assets/currentteam/madhu.jpg"
-  }
+  },
+  {
+    id: 8,
+    name: "Valluru Venkata Akshitha",
+    role: "Marketing",
+    position: "Marketing",
+    tenure: "2026–2027 (current)",
+    description: "Building connections, driving participation, and taking the GFG community further.",
+    linkedin: "https://www.linkedin.com/in/akshitha-valluru-977a64381?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    github: "https://github.com/AkshithaaValluru",
+    photo: "/assets/currentteam/akshitha.jpg",
+    image: "/assets/currentteam/akshitha.jpg"
+  },
+  {
+    id: 9,
+    name: "Cheboyina Rohith Ganesh",
+    role: "Marketing",
+    position: "Marketing",
+    tenure: "2026–2027 (current)",
+    description: "Turning ideas into impact and attention into engagement.",
+    linkedin: "https://www.linkedin.com/in/rohith-ganesh-cheboyina-14b919379?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    github: "https://github.com/rohithganeshcheboyina-design",
+    photo: "/assets/currentteam/rohith.jpg",
+    image: "/assets/currentteam/rohith.jpg"
+  },
+
 ];
 
 export default coreTeam;
