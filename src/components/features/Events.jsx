@@ -3,36 +3,37 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Events.css';
 import WinnersModal from './WinnersModal';
 import TiltCard from '../../lib/TiltCard';
-import Algorithmist_poster from '../../assets/Algorithmist_poster.jpeg';
+import { hoverScale, tapScale } from '../../lib/motionConfig';
+import MagneticButton from '../../lib/MagneticButton';
 import hackheist from '../../assets/hackheist.jpg';
 import nationalSkillup from '../../assets/nationalSkillup.jpg';
 import GeekFest from '../../assets/GeekFest.jpg';
-import outbreak from '../../assets/outbreak.png';
 import algotussle from '../../assets/algotussle.jpg';
 import algorythms from '../../assets/algorythms.jpeg';
-import { hoverScale, tapScale } from '../../lib/motionConfig';
-import MagneticButton from '../../lib/MagneticButton';
 import page2stage from '../../assets/page2stage.jpg';
 import uidoppleganger from '../../assets/uidoppleganger.jpg';
 import algosniff from '../../assets/algosniff.jpg';
 import codeblitz from '../../assets/codeblitz.jpg';
+import outbreak2k26 from '../../assets/outbreak2k26.png';
+
 const EVENTS_DATA = {
-    ongoing: {
-        title: "ALGORITHMIST'26",
-        date: "Feb 11 - Mar 30, 2026",
-        description: "The ultimate coding summit where logic meets glory. Two days of intense algorithmic challenges, workshops, and networking with elite developers.",
-        image: Algorithmist_poster,
-        link: "https://algorithmist26.vercel.app/"
-    },
     upcoming: {
-        title: "OUT BREAK'26",
-        date: "Coming Soon , Stay Tuned...",
-        description: "This is a 24-Hour Hackathon designed to isolate and amplify elite coding capabilities.",
-        image: outbreak,
+        title: "STAY TUNED FOR WHAT'S NEXT",
+        date: "COMING SOON, STAY TUNED...",
+        description: "We are gearing up for an exciting lineup of technical workshops, competitive hackathons, and skill-building sessions for the upcoming academic tenure. Stay tuned for official announcements!",
+        image: null,
         link: "#"
-        // https://gfgkare-out-break-26.vercel.app/
     },
-    past: [
+    past2026: [
+        {
+            id: 110,
+            title: "OutBreak'26",
+            description: "A 24-Hour Hackathon designed to isolate and amplify elite coding capabilities.",
+            image: outbreak2k26,
+            linkedin: "https://gfgkare-out-break-26.vercel.app/"
+        }
+    ],
+    past2025: [
         {
             id: 101,
             title: "CodeBlitz|Algorithmist'26",
@@ -101,12 +102,13 @@ const EVENTS_DATA = {
 
 const Events = () => {
     const [selectedEventId, setSelectedEventId] = useState(null);
-    const scrollContainerRef = useRef(null);
+    const scroll2026Ref = useRef(null);
+    const scroll2025Ref = useRef(null);
 
-    const scroll = (direction) => {
-        if (scrollContainerRef.current) {
+    const scroll = (ref, direction) => {
+        if (ref.current) {
             const scrollAmount = 400;
-            scrollContainerRef.current.scrollBy({
+            ref.current.scrollBy({
                 left: direction === 'left' ? -scrollAmount : scrollAmount,
                 behavior: 'smooth'
             });
@@ -125,24 +127,26 @@ const Events = () => {
     }) => (
         <div className={wrapperClass}>
             <div className="text-left mb-12">
-                <h3 className="text-4xl font-serif"><span className={sectionAccentClass}>{sectionLabel}</span> <span className="text-text">Event</span></h3>
+                <h3 className="text-4xl font-serif"><span className={sectionAccentClass}>{sectionLabel}</span> <span className="text-text">Events</span></h3>
             </div>
 
             <div className="relative w-full rounded-2xl overflow-hidden border border-secondary/30 group">
-                <div className="grid grid-cols-1 lg:grid-cols-2 lg:h-[70vh]">
-                    <div className="relative h-[60vh] lg:h-[70vh] flex items-center justify-center overflow-hidden">
-                        <img
-                            src={event.image}
-                            alt={`${event.title} Poster`}
-                            className="w-full h-full object-contain p-4 lg:p-8"
-                            decoding="async"
-                            loading={priorityImage ? "eager" : "lazy"}
-                            fetchPriority={priorityImage ? "high" : "low"}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent pointer-events-none"></div>
-                    </div>
+                <div className={`grid grid-cols-1 ${event.image ? 'lg:grid-cols-2 lg:min-h-[60vh]' : ''}`}>
+                    {event.image && (
+                        <div className="relative h-[60vh] lg:h-auto flex items-center justify-center overflow-hidden">
+                            <img
+                                src={event.image}
+                                alt={`${event.title} Poster`}
+                                className="w-full h-full object-contain p-4 lg:p-8"
+                                decoding="async"
+                                loading={priorityImage ? "eager" : "lazy"}
+                                fetchPriority={priorityImage ? "high" : "low"}
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent pointer-events-none"></div>
+                        </div>
+                    )}
 
-                    <div className="bg-bg-surface p-4 lg:p-6 flex flex-col justify-center relative">
+                    <div className={`bg-bg-surface p-6 lg:p-10 flex flex-col justify-center relative ${!event.image ? 'w-full py-12' : ''}`}>
 
                         <span className={`inline-block py-1 px-3 rounded-full text-xs font-bold uppercase tracking-widest w-fit mb-6 ${badgeClass}`}>
                             {badgeText}
@@ -159,7 +163,7 @@ const Events = () => {
                             {event.description}
                         </p>
                         <MagneticButton>
-                            <a href={event.link}>
+                            <a href={event.link} onClick={(e) => event.link === '#' && e.preventDefault()}>
                                 <button className="btn btn-primary self-start">
                                     {buttonText}
                                 </button>
@@ -171,133 +175,122 @@ const Events = () => {
         </div>
     );
 
+    const renderPastSlider = (eventsList, scrollRef, sublabel, titleText) => (
+        <div className="mb-16">
+            <div className="text-left mb-12">
+                <h2 className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-2">{sublabel}</h2>
+                <h3 className="text-4xl font-serif">
+                    <span className="text-red-500">Past</span>{" "}
+                    <span className="text-white">{titleText}</span>
+                </h3>
+            </div>
+
+            <div className="relative group/slider">
+                <motion.button
+                    onClick={() => scroll(scrollRef, 'left')}
+                    className="hidden md:flex absolute -left-12 lg:-left-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-secondary bg-bg/80 backdrop-blur-sm items-center justify-center text-text-muted hover:text-accent hover:border-accent transition-all z-20 opacity-0 group-hover/slider:opacity-100 shadow-lg"
+                    whileHover={hoverScale}
+                    whileTap={tapScale}
+                    aria-label="Previous Events"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                </motion.button>
+
+                <motion.button
+                    onClick={() => scroll(scrollRef, 'right')}
+                    className="hidden md:flex absolute -right-12 lg:-right-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-secondary bg-bg/80 backdrop-blur-sm items-center justify-center text-text-muted hover:text-accent hover:border-accent transition-all z-20 opacity-0 group-hover/slider:opacity-100 shadow-lg"
+                    whileHover={hoverScale}
+                    whileTap={tapScale}
+                    aria-label="Next Events"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                </motion.button>
+
+                <div
+                    ref={scrollRef}
+                    className="flex overflow-x-auto pb-12 gap-8 snap-x snap-mandatory scrollbar-hide scroll-smooth"
+                >
+                    {eventsList.map((event) => (
+                        <TiltCard
+                            key={event.id}
+                            className="min-w-[85vw] md:min-w-[400px] snap-center bg-bg-surface border border-secondary/30 rounded-xl overflow-hidden flex flex-col group hover:border-accent/50 transition-colors duration-300"
+                        >
+                            <div className="h-48 relative overflow-hidden bg-secondary/10">
+                                {typeof event.image === 'string' && event.image.startsWith('bg-') ? (
+                                    <div className={`absolute inset-0 ${event.image}`}></div>
+                                ) : (
+                                    <img
+                                        src={event.image}
+                                        alt={event.title}
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+                                        decoding="async"
+                                        loading="lazy"
+                                        fetchPriority="low"
+                                    />
+                                )}
+                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                                <div className="absolute bottom-4 left-4 right-4">
+                                    <div className="inline-block px-4 py-2 bg-bg/80 backdrop-blur-md border-l-4 border-accent rounded-r-lg">
+                                        <h4 className="text-lg md:text-l font-bold text-white font-serif tracking-wide">{event.title}</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="p-6 flex-1 flex flex-col">
+                                <p className="text-text-muted text-sm mb-8 flex-1 opacity-80">{event.description}</p>
+
+                                <div className="flex gap-4 mt-8">
+                                    <a
+                                        href={event.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex-1 py-3 text-xs font-bold uppercase tracking-wider border border-secondary text-text rounded-full hover:bg-secondary hover:text-white transition-all text-center"
+                                    >
+                                        Visit Site
+                                    </a>
+
+                                    <button
+                                        onClick={() => setSelectedEventId(event.id)}
+                                        className="flex-1 py-3 text-xs font-bold uppercase tracking-wider bg-secondary/10 text-accent border border-secondary rounded-full hover:bg-accent hover:text-bg hover:border-accent transition-all"
+                                    >
+                                        View Winners
+                                    </button>
+                                </div>
+                            </div>
+                        </TiltCard>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+
     return (
         <section id="events" className="py-3 md:py-6">
             <div className="container">
 
-                {/* --- ONGOING EVENT SECTION --- */}
-                {renderFeaturedEvent({
-                    wrapperClass: 'mb-10 ongoing-event',
-                    sectionLabel: 'Ongoing',
-                    sectionAccentClass: 'text-green-500',
-                    event: EVENTS_DATA.ongoing,
-                    badgeText: 'Live Now',
-                    badgeClass: 'border border-green-500/40 text-green-500',
-                    buttonText: 'Explore',
-                    priorityImage: true
-                })}
-
                 {/* --- UPCOMING EVENT SECTION --- */}
-                <div className="mb-6">
+                <div className="mb-16">
                     {renderFeaturedEvent({
                         wrapperClass: 'upcoming-event',
                         sectionLabel: 'Upcoming',
                         sectionAccentClass: 'text-yellow-500',
                         event: EVENTS_DATA.upcoming,
-                        badgeText: 'Upcoming',
+                        badgeText: 'Announcements',
                         badgeClass: 'border border-yellow-500/40 text-yellow-500',
-                        buttonText: 'Registration Opens Soon',
+                        buttonText: 'Stay Tuned',
                         priorityImage: false
                     })}
                 </div>
 
-                {/* --- PAST EVENTS SECTION (Grid Layout) --- */}
-                <div>
-                    <div className="text-left mb-12">
-                        <h2 className="text-secondary text-xs font-bold uppercase tracking-[0.2em] mb-2">Mission Logs</h2>
-                        <h3 className="text-4xl font-serif">
-                            <span className="text-red-500">Past</span>{" "}
-                            <span className="text-white">Events</span>
-                        </h3>
-                    </div>
+                {/* --- 2026-2027 PAST EVENTS --- */}
+                {renderPastSlider(EVENTS_DATA.past2026, scroll2026Ref, "2026–2027 Mission Logs", "Events (2026–2027)")}
 
-                    {/* Slider Wrapper with side buttons */}
-                    <div className="relative group/slider">
-                        {/* Navigation Buttons - Left */}
-                        <motion.button
-                            onClick={() => scroll('left')}
-                            className="hidden md:flex absolute -left-12 lg:-left-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-secondary bg-bg/80 backdrop-blur-sm items-center justify-center text-text-muted hover:text-accent hover:border-accent transition-all z-20 opacity-0 group-hover/slider:opacity-100 shadow-lg"
-                            whileHover={hoverScale}
-                            whileTap={tapScale}
-                            aria-label="Previous Events"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
-                        </motion.button>
-
-                        {/* Navigation Buttons - Right */}
-                        <motion.button
-                            onClick={() => scroll('right')}
-                            className="hidden md:flex absolute -right-12 lg:-right-16 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-secondary bg-bg/80 backdrop-blur-sm items-center justify-center text-text-muted hover:text-accent hover:border-accent transition-all z-20 opacity-0 group-hover/slider:opacity-100 shadow-lg"
-                            whileHover={hoverScale}
-                            whileTap={tapScale}
-                            aria-label="Next Events"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                        </motion.button>
-
-                        {/* Horizontal Scroll Container */}
-                        <div
-                            ref={scrollContainerRef}
-                            className="flex overflow-x-auto pb-12 gap-8 snap-x snap-mandatory scrollbar-hide scroll-smooth"
-                        >
-                            {EVENTS_DATA.past.map((event, index) => (
-                                <TiltCard
-                                    key={event.id}
-                                    className="min-w-[85vw] md:min-w-[400px] snap-center bg-bg-surface border border-secondary/30 rounded-xl overflow-hidden flex flex-col group hover:border-accent/50 transition-colors duration-300"
-                                >
-                                    {/* Image Area */}
-                                    <div className="h-48 relative overflow-hidden bg-secondary/10">
-                                        {typeof event.image === 'string' && event.image.startsWith('bg-') ? (
-                                            <div className={`absolute inset-0 ${event.image}`}></div>
-                                        ) : (
-                                            <img
-                                                src={event.image}
-                                                alt={event.title}
-                                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
-                                                decoding="async"
-                                                loading="lazy"
-                                                fetchPriority="low"
-                                            />
-                                        )}
-                                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
-                                        <div className="absolute bottom-4 left-4 right-4">
-                                            <div className="inline-block px-4 py-2 bg-bg/80 backdrop-blur-md border-l-4 border-accent rounded-r-lg">
-                                                <h4 className="text-lg md:text-l font-bold text-white font-serif tracking-wide">{event.title}</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Content Area */}
-                                    <div className="p-6 flex-1 flex flex-col">
-                                        <p className="text-text-muted text-sm mb-8 flex-1 opacity-80">{event.description}</p>
-
-                                        <div className="flex gap-4 mt-8">
-                                            <a
-                                                href={event.linkedin}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex-1 py-3 text-xs font-bold uppercase tracking-wider border border-secondary text-text rounded-full hover:bg-secondary hover:text-white transition-all text-center"
-                                            >
-                                                Visit Site
-                                            </a>
-
-                                            <button
-                                                onClick={() => setSelectedEventId(event.id)}
-                                                className="flex-1 py-3 text-xs font-bold uppercase tracking-wider bg-secondary/10 text-accent border border-secondary rounded-full hover:bg-accent hover:text-bg hover:border-accent transition-all"
-                                            >
-                                                View Winners
-                                            </button>
-                                        </div>
-                                    </div>
-                                </TiltCard>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+                {/* --- 2025-2026 PAST EVENTS --- */}
+                {renderPastSlider(EVENTS_DATA.past2025, scroll2025Ref, "2025–2026 Mission Logs", "Events (2025–2026)")}
 
             </div>
 
@@ -315,3 +308,6 @@ const Events = () => {
 };
 
 export default Events;
+
+
+

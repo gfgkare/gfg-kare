@@ -2,7 +2,11 @@
 // For now, it returns mock data to ensure the UI is ready for the integration.
 import rajashekar from "../assets/faculty/rajashekar.jpg";
 import reshni from "../assets/faculty/reshni.jpg";
-import yaswanth from "../assets/current_team/yaswanth.jpg";   
+import { coreTeam } from "../data/coreTeamData.js";
+import firstob from "../assets/oubreak2k26(winners)/firstprize.png";
+import secondob from "../assets/oubreak2k26(winners)/secondprize.png";
+import thirdob from "../assets/oubreak2k26(winners)/thirdprize.png";
+import yaswanth from "../assets/current_team/yaswanth.jpg";
 import campus_mantri from "../assets/current_team/campus_mantri.jpg";
 import abhinay from "../assets/current_team/abhinay.jpg";
 import deepa from "../assets/current_team/deepa.png";
@@ -104,7 +108,7 @@ export const getTeam = async () => {
             name: "Ashok Ch",
             role: "Chair Person",
             tenure: "founders",
-            image:AshokReddy,
+            image: AshokReddy,
             linkedin: "https://www.linkedin.com/in/ashokreddycheluri-740603235/"
         },
         {
@@ -189,19 +193,19 @@ export const getTeam = async () => {
         },
         {
             id: 3,
-            name: "Venkateswara Rao P",
-            role: "Campus Mantri",
-            tenure: "2024–2025",
-            image: PidigundlaVenkateswaraRao,
-            linkedin: "https://www.linkedin.com/in/pidigundla-venkateswara-rao-03b319280/"
-        },
-        {
-            id: 4,
             name: "Navadeep M",
             role: "Chair Person",
             tenure: "2024–2025",
             image: navadeepMarella,
             linkedin: "https://www.linkedin.com/in/navadeep-marella-13a656253/"
+        },
+        {
+            id: 4,
+            name: "Venkateswara Rao P",
+            role: "Campus Mantri",
+            tenure: "2024–2025",
+            image: PidigundlaVenkateswaraRao,
+            linkedin: "https://www.linkedin.com/in/pidigundla-venkateswara-rao-03b319280/"
         },
         {
             id: 5, // ✅ FIXED DUPLICATE ID
@@ -232,7 +236,7 @@ export const getTeam = async () => {
             name: "Siri",
             role: "PR & Outreach",
             tenure: "2024–2025",
-            image: SiriChowdary ,
+            image: SiriChowdary,
             linkedin: "https://www.linkedin.com/in/siri-chowdary-795668268/"
         },
         {
@@ -276,95 +280,102 @@ export const getTeam = async () => {
             linkedin: "https://www.linkedin.com/in/yashwanth-kasa-b5222a247/"
         },
         {
-            id: 6,
-            name: "Anirudh N C",
-            role: "Campus Mantri",
-            tenure: "2025–2026 (current)",
-            image: campus_mantri,
-            linkedin: "https://www.linkedin.com/in/anirudh-naginayani-cheruvu-a1b720289/"
-        },
-        {
-            id: 7,
+            id: 201,
             name: "Rakshan Ananth M",
-            role: "Chairperson",
-            tenure: "2025–2026 (current)",
+            role: "Chair person",
+            tenure: "2025–2026",
             image: rakshan,
             linkedin: "https://www.linkedin.com/in/rakshan-ananth-m/"
         },
         {
-            id: 8,
+            id: 202,
+            name: "Anirudh N C",
+            role: "Campus Mantri",
+            tenure: "2025–2026",
+            image: campus_mantri,
+            linkedin: "https://www.linkedin.com/in/anirudh-naginayani-cheruvu-a1b720289/"
+        },
+        {
+            id: 203,
             name: "Vijayashekhar C",
             role: "Technical Lead",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: vijayashekhar,
             linkedin: "https://www.linkedin.com/in/vijayashekarc/"
         },
         {
-            id: 9,
+            id: 204,
             name: "Sushmitha N",
             role: "PR & Outreach",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: shushmitha,
             linkedin: "https://www.linkedin.com/in/sushmitha-n-379804323/"
         },
         {
-            id: 10,
+            id: 205,
             name: "Deepa M",
             role: "Web Developer",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: deepa,
             linkedin: "https://www.linkedin.com/in/manyam-deepa-3ba988302/"
         },
         {
-            id: 11,
+            id: 206,
             name: "Yashwanth K",
             role: "Design & Creative",
-            tenure: "2025–2026 (current)",
-            image: yaswanth, // ✅ KEEP AVATAR
+            tenure: "2025–2026",
+            image: yaswanth,
             linkedin: "https://www.linkedin.com/in/yashwanth-kasa-b5222a247/"
         },
         {
-            id: 12,
+            id: 207,
             name: "Harpreet",
             role: "Social Media",
-            tenure: "2025–2026 (current)",
-            image: harpreet, // ✅ NOW MATCHES IMPORT
+            tenure: "2025–2026",
+            image: harpreet,
             linkedin: "https://www.linkedin.com/in/harpreet04singh/"
         },
         {
-            id: 13,
+            id: 208,
             name: "Venunadh P",
             role: "Machine Learning",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: venunadh,
             linkedin: "https://www.linkedin.com/in/venunadh-parimi-1b571034b/"
         },
         {
-            id: 14,
+            id: 209,
             name: "Shruthi M",
             role: "Events & Operations",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: shruthi,
             linkedin: "https://www.linkedin.com/in/shruthi-pandian-55b123362?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         },
         {
-            id: 15,
+            id: 210,
             name: "HARSHA VARDHAN L",
             role: "UI/UX Developer",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: harsha,
             linkedin: "https://www.linkedin.com/in/lingalaharshavardhanreddy/"
         },
         {
-            id: 16,
+            id: 211,
             name: "Abhinay M",
             role: "Associate Event Organiser",
-            tenure: "2025–2026 (current)",
+            tenure: "2025–2026",
             image: abhinay,
             linkedin: "https://www.linkedin.com/in/abhinay-reddy-mukkamalla-455893323?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-        }
+        },
+        ...coreTeam
     ];
 };
+
+
+export const getCoreTeam = async () => {
+    return coreTeam;
+};
+
 
 
 export const getEventWinners = async (eventId) => {
@@ -373,75 +384,83 @@ export const getEventWinners = async (eventId) => {
     const WINNERS_DATABASE = {
         101: { //codeblitz
             topWinners: [
-                { id: 1, name: "Mohammed Aslam S", position: 1, image: nodp},
-                { id: 2, name: "Yuvej kumar", position: 2, image: nodp},
-                { id: 3, name: "Penchala Prasad Lakkakula", position: 3, image: nodp},
+                { id: 1, name: "Mohammed Aslam S", position: 1, image: nodp },
+                { id: 2, name: "Yuvej kumar", position: 2, image: nodp },
+                { id: 3, name: "Penchala Prasad Lakkakula", position: 3, image: nodp },
             ],
             allWinners: []
         },
         102: { //Algo Sniff
             topWinners: [
-                { id: 1, name: "Mohammed Aslam S", position: 1, image: nodp},
-                { id: 2, name: "Yuvej kumar", position: 2, image: nodp},
-                { id: 3, name: "Penchala Prasad Lakkakula", position: 3, image: nodp},
+                { id: 1, name: "Mohammed Aslam S", position: 1, image: nodp },
+                { id: 2, name: "Yuvej kumar", position: 2, image: nodp },
+                { id: 3, name: "Penchala Prasad Lakkakula", position: 3, image: nodp },
             ],
             allWinners: []
         },
         103: { //UIdoppleganger
             topWinners: [
-                { id: 1, name: "PONAKA VENKATA SAI–KARE", position: 1, image: firstui},
-                { id: 2, name: "Prasanna Venketesh S–KARE", position: 2, image: secondui},
-                { id: 3, name: "Dhakshina Sri P–Ramco Institute of Technology", position: 3, image: thirdui},
-                {id: 4, name: "Revathi P–P.S.R Engineering College", position: 4, image: fourthui}
+                { id: 1, name: "PONAKA VENKATA SAI–KARE", position: 1, image: firstui },
+                { id: 2, name: "Prasanna Venketesh S–KARE", position: 2, image: secondui },
+                { id: 3, name: "Dhakshina Sri P–Ramco Institute of Technology", position: 3, image: thirdui },
+                { id: 4, name: "Revathi P–P.S.R Engineering College", position: 4, image: fourthui }
             ],
             allWinners: []
         },
         104: { //page2stage
             topWinners: [
-                { id: 1, name: "Chandana Venkateswara Rao", position: 1, image: nodp},
-                { id: 2, name: "Mohammed Aslam S", position: 2, image: nodp},
-                { id: 3, name: "Karli Tejasree", position: 3, image: nodp},
+                { id: 1, name: "Chandana Venkateswara Rao", position: 1, image: nodp },
+                { id: 2, name: "Mohammed Aslam S", position: 2, image: nodp },
+                { id: 3, name: "Karli Tejasree", position: 3, image: nodp },
             ],
             allWinners: []
         },
         105: { //Algorythms
             topWinners: [
-                { id: 1, name: "Jaliparthi Sravanthi", position: 1, image: nodp},
-                { id: 2, name: "Mohammed Aslam S", position: 2, image: nodp},
-                { id: 3, name: "Shaik Arfad", position: 3, image: nodp},
+                { id: 1, name: "Jaliparthi Sravanthi", position: 1, image: nodp },
+                { id: 2, name: "Mohammed Aslam S", position: 2, image: nodp },
+                { id: 3, name: "Shaik Arfad", position: 3, image: nodp },
             ],
             allWinners: []
         },
         106: { //AlgoTussle
             topWinners: [
-                { id: 1, name: "Penchala Prasad Lakkakula", position: 1, image: nodp},
-                { id: 2, name: "Mohammed Ashfaqul Haq", position: 2, image: nodp},
-                { id: 3, name: "CHANDANA VENKATESWARA RAO", position: 3, image: nodp},
+                { id: 1, name: "Penchala Prasad Lakkakula", position: 1, image: nodp },
+                { id: 2, name: "Mohammed Ashfaqul Haq", position: 2, image: nodp },
+                { id: 3, name: "CHANDANA VENKATESWARA RAO", position: 3, image: nodp },
             ],
             allWinners: []
         },
         107: { // GeekFest
             topWinners: [
-                { id: 1, name: "Inbathamizhan S", position: 1, image: firstgf},
-                { id: 2, name: " N. Kavya Sri", position: 2, image: secondgf},
-                { id: 3, name: "Siddabathuni Deo Haneesh", position: 3, image: thirdgf},
+                { id: 1, name: "Inbathamizhan S", position: 1, image: firstgf },
+                { id: 2, name: " N. Kavya Sri", position: 2, image: secondgf },
+                { id: 3, name: "Siddabathuni Deo Haneesh", position: 3, image: thirdgf },
             ],
             allWinners: []
         },
         108: { // HackHeist
             topWinners: [
-                { id: 1, name: "Coding Ninjas", position: 1, image: first},
-                { id: 2, name: "Wonder Women’s", position: 2, image: second},
-                { id: 3, name: "Moon Team", position: 3, image: third},
-                {id: 4, name: "Binary Brains", position: 4, image: fourth}
+                { id: 1, name: "Coding Ninjas", position: 1, image: first },
+                { id: 2, name: "Wonder Women’s", position: 2, image: second },
+                { id: 3, name: "Moon Team", position: 3, image: third },
+                { id: 4, name: "Binary Brains", position: 4, image: fourth }
             ],
             allWinners: []
         },
         109: { // National Skill UP
             topWinners: [
-                { id: 1, name: "Rahul S.", position: 1, image: nodp},
-                { id: 2, name: "Meera J.", position: 2, image: nodp},
-                { id: 3, name: "Kiran P.", position: 3, image: nodp},
+                { id: 1, name: "Rahul S.", position: 1, image: nodp },
+                { id: 2, name: "Meera J.", position: 2, image: nodp },
+                { id: 3, name: "Kiran P.", position: 3, image: nodp },
+            ],
+            allWinners: []
+        },
+        110: { // Outbreak2k26
+            topWinners: [
+                { id: 1, name: "Yuvej Kumar, J Maniswar Reddy, Vudugundla Revathi, Pothula Srujana", position: 1, image: firstob },
+                { id: 2, name: "Charishma Devabathini, Sundar Sreekanth, Damalacheruvu Hemasree Reddy, Dwarakacharla Guru Mounika", position: 2, image: secondob },
+                { id: 3, name: "Pulipaka Sanjana, Manukinda Krishnavamsi, Gangireddy Santhosh Reddy, Maddha Chandra Lekha", position: 3, image: thirdob },
             ],
             allWinners: []
         }
@@ -452,3 +471,4 @@ export const getEventWinners = async (eventId) => {
         allWinners: []
     };
 };
+
