@@ -63,7 +63,7 @@ const About = () => {
               <img
                 src={teamImage}
                 alt="GFG KARE Team"
-                className="w-full h-[230px] object-contain bg-bg"
+                className="w-full h-auto max-h-[450px] object-contain rounded-2xl bg-bg"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-bg/30 via-transparent to-transparent"></div>

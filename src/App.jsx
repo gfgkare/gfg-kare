@@ -31,7 +31,7 @@ const HomePage = () => (
     />
     <CoreTeam
       title="MEET OUR CORE TEAM"
-      subtitle="The 2025-2026 Leadership"
+      subtitle="The 2026-2027 Leadership"
       tenureFilter="current"
       showViewAll={true}
     />

@@ -80,12 +80,14 @@ const Navbar = () => {
                     ))}
                     <li>
                         <MagneticButton className="ml-4">
-                            <button
-                                onClick={() => scrollToSection('footer')}
-                                className="btn btn-primary"
+                            <a
+                                href="https://chat.whatsapp.com/I3cvQ5036WP2ug9pOdX7nl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-primary inline-flex items-center gap-2"
                             >
                                 Join Us
-                            </button>
+                            </a>
                         </MagneticButton>
                     </li>
                 </ul>
@@ -133,12 +135,14 @@ const Navbar = () => {
                             </li>
                         ))}
                         <li className="pt-2 border-t border-secondary/20">
-                            <button
-                                onClick={() => scrollToSection('footer')}
-                                className="btn btn-primary w-full"
+                            <a
+                                href="https://chat.whatsapp.com/I3cvQ5036WP2ug9pOdX7nl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-primary w-full text-center block"
                             >
                                 Join Us
-                            </button>
+                            </a>
                         </li>
                     </ul>
                 </motion.div>
