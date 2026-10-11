@@ -280,20 +280,20 @@ export const getTeam = async () => {
             linkedin: "https://www.linkedin.com/in/yashwanth-kasa-b5222a247/"
         },
         {
-            id: 201,
-            name: "Rakshan Ananth M",
-            role: "Chair person",
-            tenure: "2025–2026",
-            image: rakshan,
-            linkedin: "https://www.linkedin.com/in/rakshan-ananth-m/"
-        },
-        {
             id: 202,
             name: "Anirudh N C",
             role: "Campus Mantri",
             tenure: "2025–2026",
             image: campus_mantri,
             linkedin: "https://www.linkedin.com/in/anirudh-naginayani-cheruvu-a1b720289/"
+        },
+        {
+            id: 201,
+            name: "Rakshan Ananth M",
+            role: "Chair person",
+            tenure: "2025–2026",
+            image: rakshan,
+            linkedin: "https://www.linkedin.com/in/rakshan-ananth-m/"
         },
         {
             id: 203,
